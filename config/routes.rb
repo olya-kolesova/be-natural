@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   resources :farms, only: [:index, :show]
   resources :products, only: [:index, :show, :create]
+  resources :orders, only: [:index, :show]
 end
