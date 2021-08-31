@@ -1,6 +1,6 @@
 class FarmsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show, :index]
-    before_action :set_farm, only: [:show, :edit, :update]
+    before_action :set_farm, only: [:show, :edit, :update, :destroy]
 
   def index
     @farms = Farm.all
@@ -31,6 +31,12 @@ class FarmsController < ApplicationController
       else
         render :edit
       end
+    end
+
+    def destroy
+      @farm.user = current_user
+      @farm.destroy
+      redirect_to farms_path
     end
   end
 
