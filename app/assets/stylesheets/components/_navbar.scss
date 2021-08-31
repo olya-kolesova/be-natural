@@ -1,12 +1,17 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+.my-navbar {
+  background-color: #F6F2D5!important;
+  margin-left: 29px;
+  margin-top: 20px;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+a.navbar {
+  font-family: GTPressuraMono,sans-serif;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.a-link {
+  font-family: Plaak-SemicondensedRegular,sans-serif;
+}
+
+.drop-down {
+  background-color:#F6F2D5;
 }
