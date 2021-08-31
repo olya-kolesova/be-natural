@@ -18,7 +18,8 @@ User.create(
   first_name: "Katya",
   last_name: "Ueno",
   email: "katya@gmail.com",
-  password: '123456'
+  password: '123456',
+  farmer: true
 )
 
 CATEGORIES = %w(Livestock Crops Dairy Vegetables Fish)
@@ -30,7 +31,17 @@ vegetables = Category.create(name: CATEGORIES[3])
 fish = Category.create(name: CATEGORIES[4])
 
 
-19.times do
+9.times do
+  User.create(
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    email: Faker::Internet.email,
+    password: '123456',
+    farmer: true
+  )
+end
+
+10.times do
   User.create(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
@@ -38,6 +49,7 @@ fish = Category.create(name: CATEGORIES[4])
     password: '123456'
   )
 end
+
 
 farm1 = Farm.create(
   name: "Spitalfields City Farm",
