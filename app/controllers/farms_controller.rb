@@ -6,7 +6,8 @@ class FarmsController < ApplicationController
     @farms = Farm.all
   end
 
-  def show; end
+  def show
+  end
 
   def new
     @farm = Farm.new
@@ -14,8 +15,8 @@ class FarmsController < ApplicationController
 
   def create
     @farm = Farm.new(farm_params)
-    # @farm.user = current_user
-    if @farm.save
+    @farm.user = current_user
+    if @farm.save!
       redirect_to farm_path(@farm)
     else
       render :new
