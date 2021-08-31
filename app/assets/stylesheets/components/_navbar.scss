@@ -1,7 +1,8 @@
 .my-navbar {
   background-color: #F6F2D5!important;
-  margin-left: 29px;
   margin-top: 20px;
+  border-top: 1px solid #303030;
+  border-bottom: 1px solid #303030;
 }
 
 a.navbar {
@@ -10,8 +11,32 @@ a.navbar {
 
 .a-link {
   font-family: Plaak-SemicondensedRegular,sans-serif;
+  color:black;
 }
 
 .drop-down {
   background-color:#F6F2D5;
+}
+
+a.dropdown-item {
+  background-color: #F6F2D5;
+  font-family: Plaak-SemicondensedRegular,sans-serif;
+  font-weight:bold;
+}
+
+img {
+ height: 42px;
+ width: 43px;
+ top: 50%;
+ -ms-transform: translateY(-10%);
+  transform: translateY(-10%);
+  margin-left: 30px;
+  margin-right: 23px;
+  margin-top: 4px;
+  margin-bottom: -4px;
+}
+
+.nav-link {
+  font-family: 'Noticia Text', serif !important;
+  color:black;
 }
