@@ -1,7 +1,13 @@
 <div class='container mt-8'>
   <h3>FARMS INDEX</h3>
-  <div class='row'>
-    farm cards
-  </div>
+  <% @farms.each do |farm| %>
+    <div class='row'>
+    <h2>
+      <%= link_to farm.name, farm_path(farm) %>
+    </h2>
+    <p>
+      <%= farm.location %>
+    </p>
+    </div>
+  <% end %>
 </div>
-
