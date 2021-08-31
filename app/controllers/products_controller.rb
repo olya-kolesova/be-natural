@@ -10,17 +10,30 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
     @farm = Farm.find(params[:farm_id])
+    @category = Category.find(params[:product][:category].to_i)
     @product.farm = @farm
-    if @product.save
-      redirect_to products_path
+    @product.category = @category
+    if @product.save!
+      redirect_to farm_path(@farm)
     else
-      render 'farms/:id'
+      render 'farms/show'
     end
+  end
+
+  def update
+    @product = Product.find(params[:id])
+    @product.update(product_params)
+    redirect_to product_path(@product)
+  end
+
+  def destroy
+    @product = Product.find(params[:id])
+    @product.destroy
   end
 
   private
 
   def product_params
-    params.require(:product).permit(:name, :description, :price, :farm_id)
+    params.require(:product).permit(:name, :description, :price)
   end
 end

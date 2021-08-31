@@ -7,6 +7,8 @@ class FarmsController < ApplicationController
   end
 
   def show
+    @product = Product.new
+    @categories = Category.all
   end
 
   def new

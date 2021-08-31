@@ -8,4 +8,20 @@
   <%= link_to product.name, product_path(product) %>
   <%= product.price %>
 </div>
+  <div>
+    <%= link_to farm_path(product.farm), method: :delete, data: {confirm: "Are you sure you would like to delete this product?"} do %>
+      <i class="fas fa-trash"></i>
+    <% end %>
+  </div>
 <% end %>
+
+<div class="container">
+  <%= simple_form_for [@farm, @product] do |f| %>
+  <%= f.input :name %>
+  <%= f.input :price %>
+  <%= f.input :category, collection: @categories %>
+  <%= f.input :description %>
+  <%= f.submit "Create product", class: "btn btn-success" %>
+  <% end %>
+
+</div>
