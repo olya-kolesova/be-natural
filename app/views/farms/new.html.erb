@@ -1,13 +1,1 @@
-<div class='container mt-8'>
-
-  <%= simple_form_for(@farm) do |f| %>
-    <%= f.input :name, placeholder: "Farm Name" %>
-    <%= f.input :location, placeholder: "Address" %>
-    <%= f.input :description, placeholder: "Farm Description" %>
-    <%# <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-    <%= f.submit "Create", class: 'btn' %>
-  <% end %>
-
-</div>
-
-
+<%= render "form", farm: @farm %>
