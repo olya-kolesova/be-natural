@@ -1,1 +1,7 @@
 <h3>FARMS SHOW</h3>
+<% @farm.products.each do |product| %>
+<div>
+  <%= product.name %>
+  <%= product.price %>
+</div>
+<% end %>

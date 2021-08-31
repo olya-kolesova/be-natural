@@ -1,9 +1,9 @@
 class FarmsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show, :index]
     before_action :set_farm, only: [:show]
-  
+
   def index
-    @farm = Farm.all
+    @farms = Farm.all
   end
 
   def show; end
@@ -15,7 +15,7 @@ class FarmsController < ApplicationController
   def create
     @farm = Farm.new(farm_params)
     # @farm.user = current_user
-    if @farm.save    
+    if @farm.save
       redirect_to farm_path(@farm)
     else
       render :new
@@ -25,7 +25,7 @@ class FarmsController < ApplicationController
   private
 
   def set_farm
-    @farm = Farm.find(params[:farm_id])
+    @farm = Farm.find(params[:id])
   end
 
   def farm_params
