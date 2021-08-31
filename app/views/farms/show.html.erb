@@ -1,7 +1,11 @@
 <h3>FARMS SHOW</h3>
+<div>
+  <h2><%= @farm.name %></h2>
+  <p><%= @farm.description %></p>
+</div>
 <% @farm.products.each do |product| %>
 <div>
-  <%= product.name %>
+  <%= link_to product.name, product_path(product) %>
   <%= product.price %>
 </div>
 <% end %>
