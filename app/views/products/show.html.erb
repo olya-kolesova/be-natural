@@ -3,7 +3,18 @@
   <%= @product.name %>
 </h2>
 <h4>
-<%= @product.price %>
+  £ <%= @product.price %>
 </h4>
 <%= @product.description %>
+</div>
+
+<div class="container">
+  <%= simple_form_for [@product] do |f| %>
+  <%= f.input :name %>
+  <%= f.input :price %>
+  <%= f.input :category, collection: @categories %>
+  <%= f.input :description %>
+  <%= f.submit "Update product", class: "btn btn-success" %>
+  <% end %>
+
 </div>
