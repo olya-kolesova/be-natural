@@ -1,1 +1,11 @@
-<h1>Show page for orders</h1>
+<h2>Basket</h2>
+<% @order_products.each do |order_product| %>
+<div>
+  <%= order_product.product.name %>
+  <%= link_to order_path(order_product.order), method: :delete, data: {confirm: "Are you sure you would like to delete this item from the basket?"} do %>
+    <i class="fas fa-trash"></i>
+  <% end %>
+  <%= order_product.quantity %>
+  <%= order_product.product.price * order_product.quantity %>
+</div>
+<% end %>
