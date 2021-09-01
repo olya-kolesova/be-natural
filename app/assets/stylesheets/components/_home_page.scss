@@ -7,16 +7,54 @@
 
 .weatherbox {
   display:flex;
-  justify-content: space-beteen;
+  justify-content: center;
+  justify-content: space-around;
+}
+.head{
+    text-align: center;
+    position: relative;
+}
+header{
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 32px;
+    text-transform: uppercase;
+    line-height: 72px;
+    margin-bottom: 20px;
+    text-align: center;
 
 }
+.subhead {
+    text-transform: uppercase;
+    border-bottom: 2px solid #2f2f2f;
+    border-top: 2px solid #2f2f2f;
+    padding: 12px 0 12px 0;
+    text-align: center;
+}
+
+
+.subheader {
+    font-family: 'Playfair Display', serif;
+    text-transform: uppercase;
+    border-bottom: 2px solid #2f2f2f;
+    border-top: 2px solid #2f2f2f;
+    padding: 12px 0 12px 0;
+    text-align: center;
+    margin-bottom:29px;
+    font-size: 27px;
+}
+
 
 h1 {
   font-family: Plaak-SemicondensedRegular,sans-serif;
   font-size: 233px;
   text-align: center;
 }
-
+h4 {
+  text-align: right;
+    margin-right: 61px;
+    margin-top: 18px;
+}
 // .background_img {
 //   display:flex;
 //   align-items: flex-end;
@@ -116,4 +154,77 @@ span:hover:after {
   background: transparent;
   width: 100%;
   transition: 0s;
+}
+.content{
+    font-size: 0;
+    line-height: 0;
+    word-spacing: -.31em;
+    display: inline-block;
+    margin: 30px 2% 0 2%;
+}
+
+.collumns{
+  justify-content: center;
+}
+
+.collumn{
+    font-size: 14px;
+    line-height: 20px;
+    width: 17.5%;
+    display: inline-block;
+    padding: 0 1% 0 1%;
+    vertical-align: top;
+    margin-bottom: 50px;
+    transition: all .7s;
+}
+.collumn + .collumn {
+  border-left: 1px solid #2f2f2f;
+}
+.collumn .headline{
+    text-align: center;
+    line-height: normal;
+    font-family: 'Playfair Display', serif;
+    display: block;
+    margin: 0 auto;
+
+
+}
+.collumn .headline.hl1{
+    font-weight: 700;
+    font-size: 30px;
+    text-transform: uppercase;
+    padding: 10px 0 10px 0;
+    border-bottom: 1px solid;
+
+}
+
+
+
+.collumn .headline.hl3{
+    font-weight: 400;
+    font-style: italic;
+    font-size: 36px;
+    box-sizing: border-box;
+    padding: 10px 0 10px 0;
+    border-bottom: 1px solid black;
+}
+
+
+.collumn .headline.hl5{
+    font-weight: 400;
+    font-size: 42px;
+    text-transform: uppercase;
+    font-style: italic;
+    box-sizing: border-box;
+    padding: 10px 0 10px 0;
+}
+
+.collumn .headline.hl6:after{
+    border-bottom: 1px solid #2f2f2f;
+    content: '';
+    width: 100px;
+    height: 10px;
+    display: block;
+    margin: 0 auto;
+
 }
