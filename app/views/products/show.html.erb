@@ -9,6 +9,14 @@
 </div>
 
 <div class="container">
+  <%= simple_form_for [@product, @order_product] do |f| %>
+  <%= f.input :quantity %>
+  <%= f.submit "Add to basket", class: "btn btn-success" %>
+  <% end %>
+</div>
+
+
+<div class="container">
   <%= simple_form_for [@product] do |f| %>
   <%= f.input :name %>
   <%= f.input :price %>

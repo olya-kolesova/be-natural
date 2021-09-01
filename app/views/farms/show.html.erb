@@ -4,15 +4,22 @@
   <p><%= @farm.description %></p>
 </div>
 <% @farm.products.each do |product| %>
-<div>
-  <%= link_to product.name, product_path(product) %>
-  <%= product.price %>
-</div>
+  <div>
+    <%= link_to product.name, product_path(product) %>
+    <%= product.price %>
+  </div>
   <div>
     <%= link_to farm_path(product.farm), method: :delete, data: {confirm: "Are you sure you would like to delete this product?"} do %>
       <i class="fas fa-trash"></i>
     <% end %>
   </div>
+  <div class="container">
+    <%= simple_form_for [product, @order_product] do |f| %>
+      <%= f.input :quantity %>
+      <%= f.submit "Add to basket", class: "btn btn-success" %>
+    <% end %>
+  </div>
+
 <% end %>
 
 <div class="container">
