@@ -16,7 +16,7 @@
 }
 
 
-.container {
+.container0 {
   display: flex;
   justify-content: space-between;
   margin-bottom: 35px;
@@ -31,4 +31,10 @@
 
 h3 {
 margin-right: 153px;
+}
+
+.container-another {
+  display: flex;
+  justify-content: center;
+  margin-top:32px;
 }
