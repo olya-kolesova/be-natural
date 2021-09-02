@@ -5,6 +5,7 @@
 </div>
 <% @farm.products.each do |product| %>
   <div class="ml-5">
+    <%= cl_image_tag product.photo.key, height: 800, width: 500, crop: :fill %>
     <h4>
       <%= link_to product.name, product_path(product) %>
       <% if product.farm.user == current_user %>
@@ -31,6 +32,7 @@
       <%= f.input :price %>
       <%= f.input :category, collection: @categories %>
       <%= f.input :description %>
+      <%= f.input :photo, as: :file %>
       <%= f.submit "Create product", class: "btn btn-success" %>
       <% end %>
   </div>

@@ -1,7 +1,5 @@
-<div class=container>
-
 <div class="card-product">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+   <%= cl_image_tag @product.photo.key, height: 1000, width: 800, crop: :fill %>
   <div class="card-product-infos">
     <h2><%= @product.name %>: £<%= sprintf('%.2f', @product.price.round(2)) %></h2>
     <p><%= @product.description %>.</p>
@@ -16,7 +14,6 @@
 </div>
 
 
-
 <% if @product.farm.user == current_user %>
   <div class="container">
     <%= simple_form_for [@product] do |f| %>
@@ -24,6 +21,7 @@
     <%= f.input :price %>
     <%# <%= f.input :category, collection: @categories, placeholder: @product.category.name %>
     <%= f.input :description %>
+    <%= f.input :photo, as: :file %>
     <%= f.submit "Update product", class: "btn btn-success" %>
     <% end %>
   </div>

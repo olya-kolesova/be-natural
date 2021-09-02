@@ -4,7 +4,7 @@
     <%= f.input :name, placeholder: "Farm Name" %>
     <%= f.input :location, placeholder: "Address" %>
     <%= f.input :description, placeholder: "Farm Description" %>
-    <%# <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+    <%= f.input :photo, as: :file %>
     <%= f.submit "Create", class: 'btn' %>
   <% end %>
 
