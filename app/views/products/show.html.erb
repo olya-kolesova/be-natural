@@ -1,11 +1,11 @@
 <div class=container>
-<h2>
-  <%= @product.name %>
-</h2>
-<h4>
-  £ <%= @product.price %>
-</h4>
-<%= @product.description %>
+
+<div class="card-product">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+  <div class="card-product-infos">
+    <h2><%= @product.name %>: £<%= sprintf('%.2f', @product.price.round(2)) %></h2>
+    <p><%= @product.description %>.</p>
+  </div>
 </div>
 
 <div class="form w-25">
@@ -15,13 +15,7 @@
   <% end %>
 </div>
 
-<div class="card-product">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-  <div class="card-product-infos">
-    <h2>Product name</h2>
-    <p>Product description with <strong>relevant info</strong> only.</p>
-  </div>
-</div>
+
 
 <% if @product.farm.user == current_user %>
   <div class="container">
