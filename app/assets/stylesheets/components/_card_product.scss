@@ -15,6 +15,7 @@
 }
 
 .card-product h2 {
+  d-float: left;
   font-size: 16px;
   font-weight: bold;
   margin: 0;
@@ -31,4 +32,5 @@
 
 .card-product .card-product-infos {
   padding: 16px;
+  justify-content: left;
 }
