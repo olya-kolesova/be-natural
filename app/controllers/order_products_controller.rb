@@ -1,10 +1,21 @@
 class OrderProductsController < ApplicationController
-  def create
-    unless current_user.order.present?
-      @order = Order.create(user: current_user)
-    else
-      @order = current_user.order.first
-    end
-    @order_product = OrderProduct.create(user: current_user, order: @order)
+  def index
+    @order_products = OrderProduct.all
   end
+
+  def create
+    @order = Order.find_or_create_by(user: current_user)
+    @product = Product.find(params[:product_id])
+    # if clicked => quanity += 1
+    @order_product = OrderProduct.create!(order: @order, product: @product, quantity: order_product_params[:quantity])
+  end
+
+  def update
+  end
+
+  private
+
+    def order_product_params
+      params.require(:order_product).permit(:quantity)
+    end
 end

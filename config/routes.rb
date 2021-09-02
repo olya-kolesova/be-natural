@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   resources :farms do
     resources :products, only: [:create]
   end
-  resources :products, only: [:index, :show, :update, :destroy]
-  resources :orders, only: [:index, :show]
+  resources :products, only: [:index, :show, :update, :destroy] do
+    resources :order_products, only: [:create]
+  end
+  resources :orders, only: [:show]
+  resources :order_products, only: [:index, :update, :destroy]
 end

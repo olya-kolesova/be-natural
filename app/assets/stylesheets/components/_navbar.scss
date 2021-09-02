@@ -20,9 +20,15 @@ a.navbar {
 
 a.dropdown-item {
   background-color: #F6F2D5;
-  font-family: Plaak-SemicondensedRegular,sans-serif;
-  font-weight:bold;
+  font-family: 'Noticia Text', serif;
+  color:black;
 }
+
+.dropdown-item:hover {
+background-color:#F6F2D5;
+text-decoration: underline;
+}
+
 
 img {
  height: 42px;
