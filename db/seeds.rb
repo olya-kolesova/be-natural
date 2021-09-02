@@ -5,22 +5,146 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-require 'faker'
+require "open-uri"
 
 puts "Destroying seeds"
-
+OrderProduct.destroy_all
+Order.destroy_all
 Product.destroy_all
+FarmCategory.destroy_all
 Category.destroy_all
 Farm.destroy_all
 User.destroy_all
 
-User.create(
-  first_name: "Katya",
-  last_name: "Ueno",
-  email: "katya@gmail.com",
+def attach_photo(url, object, name)
+  file = URI.open(url)
+  object.photo.attach(io: file, filename: name, content_type: 'image/img')
+end
+
+#farmers
+
+user1 = User.create(
+  first_name: "Hafiz",
+  last_name: "Shukri",
+  email: "hafiz@gmail.com",
   password: '123456',
   farmer: true
 )
+url1 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630584682/be-natural/Farmers/Spitalfields_City_Farmer_dzsbv2.jpg'
+attach_photo(url1, user1, '1')
+
+user2 = User.create(
+  first_name: "Akeem",
+  last_name: "Abadi",
+  email: "akeem@gmail.com",
+  password: '123456',
+  farmer: true
+)
+url2 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630584685/be-natural/Farmers/Surrey_Docks_Farmer_ifsmsa.jpg'
+attach_photo(url2, user2, '2')
+
+user3 = User.create(
+  first_name: "Kiara",
+  last_name: "Reddy",
+  email: "kiara@gmail.com",
+  password: '123456',
+  farmer: true
+)
+url3 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630584682/be-natural/Farmers/Stepney_City_Farmer_gsmmnn.jpg'
+attach_photo(url3, user3, '3')
+
+user4 = User.create(
+  first_name: "Prisha",
+  last_name: "Khatri",
+  email: "prisha@gmail.com",
+  password: '123456',
+  farmer: true
+)
+url4 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630584683/be-natural/Farmers/Vauxhall_City_Farmer_tdiype.jpg'
+attach_photo(url4, user4, '4')
+
+user5 = User.create(
+  first_name: "Chiumbo",
+  last_name: "Bankole",
+  email: "chiumbo@gmail.com",
+  password: '123456',
+  farmer: true
+)
+url5 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630584682/be-natural/Farmers/Oasis_Farmer_Waterloo_qvycj0.jpg'
+attach_photo(url5, user5, '5')
+
+user6 = User.create(
+  first_name: "Sai",
+  last_name: "Kumar",
+  email: "chiumbo@gmail.com",
+  password: '123456',
+  farmer: true
+)
+url6 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630584684/be-natural/Farmers/Forty_Hall_Farmer_tdf3ba.jpg'
+attach_photo(url6, user6, '6')
+
+user7 = User.create(
+  first_name: "Emilio",
+  last_name: "Pereira",
+  email: "emilio@gmail.com",
+  password: '123456',
+  farmer: true
+)
+url7 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630584682/be-natural/Farmers/Newham_City_Farmer_klf6yb.jpg'
+attach_photo(url7, user7, '7')
+
+user8 = User.create(
+  first_name: "James",
+  last_name: "Brown",
+  email: "james@gmail.com",
+  password: '123456',
+  farmer: true
+)
+url8 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630584682/be-natural/Farmers/Deen_City_Farmer_ehlv6j.jpg'
+attach_photo(url8, user8, '8')
+
+user9 = User.create(
+  first_name: "Thomas",
+  last_name: "Taylor",
+  email: "thomas@gmail.com",
+  password: '123456',
+  farmer: true
+)
+url9 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630584682/be-natural/Farmers/West_Hamstead_Farmer_ztnbx3.jpg'
+attach_photo(url9, user9, '9')
+
+user10 = User.create(
+  first_name: "Samuel",
+  last_name: "Perez",
+  email: "samuel@gmail.com",
+  password: '123456',
+  farmer: true
+)
+url10 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630584684/be-natural/Farmers/Ealing_Farmer_dkf5i0.jpg'
+attach_photo(url10, user10, '10')
+
+# ordinary_users
+
+user11 = User.create(
+  first_name: "Samantha",
+  last_name: "Campbell",
+  email: "samantha@gmail.com",
+  password: '123456',
+  farmer: false
+)
+url11 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630584703/be-natural/Users/christopher-campbell-rDEOVtE7vOs-unsplash_h3rofb.jpg'
+attach_photo(url11, user11, '11')
+
+
+user12 = User.create(
+  first_name: "John",
+  last_name: "Green",
+  email: "john@gmail.com",
+  password: '123456',
+  farmer: false
+)
+url12 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630584705/be-natural/Users/mubariz-mehdizadeh-t3zrEm88ehc-unsplash_zqxfeb.jpg'
+attach_photo(url12, user12, '12')
 
 CATEGORIES = %w(Meat Crops Dairy Vegetables Fish Fruit Wine)
 
@@ -32,26 +156,6 @@ fish = Category.create(name: CATEGORIES[4])
 fruits = Category.create(name: CATEGORIES[5])
 wine = Category.create(name: CATEGORIES[6])
 
-9.times do
-  User.create(
-    first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
-    email: Faker::Internet.email,
-    password: '123456',
-    farmer: true
-  )
-end
-
-10.times do
-  User.create(
-    first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
-    email: Faker::Internet.email,
-    password: '123456'
-  )
-end
-
-
 farm1 = Farm.create(
   name: "Spitalfields City Farm",
   location: "Buxton Street, London E1 5AR",
@@ -59,6 +163,8 @@ farm1 = Farm.create(
 )
 farm1.user = User.all[0]
 farm1.save
+url13 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630584729/be-natural/Farms/Spitalfields_City_Farm_vbm7c3.jpg'
+attach_photo(url13, farm1, '13')
 
 farm2 = Farm.create(
   name: "Surrey Docks Farm",
@@ -67,6 +173,8 @@ farm2 = Farm.create(
 )
 farm2.user = User.all[1]
 farm2.save
+url14 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630584728/be-natural/Farms/Surrey_Docks_Farm_jzw9ci.jpg'
+attach_photo(url14, farm2, '14')
 
 
 farm3 = Farm.create(
@@ -76,6 +184,8 @@ farm3 = Farm.create(
 )
 farm3.user = User.all[2]
 farm3.save
+url15 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630584729/be-natural/Farms/Stepney_City_Farm_opmdq6.jpg'
+attach_photo(url15, farm3, '15')
 
 farm4 = Farm.create(
   name: "Vauxhall City Farm",
@@ -84,14 +194,18 @@ farm4 = Farm.create(
 )
 farm4.user = User.all[3]
 farm4.save
+url16 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630584729/be-natural/Farms/Vauxhall_City_Farm_vcdfhf.jpg'
+attach_photo(url16, farm4, '16')
 
 farm5 = Farm.create(
   name: "Oasis Farm Waterloo",
   location: "18 Carlisle Ln, London SE1 7LG",
-  description: "Vauxhall City Farm is an urban farm in Waterloo, a hidden gem just moments from the Southbank. They have transformed a strip of wasteland into a flourishing community resource and a haven for nature, where they learn to care for ourselves, others, plants, animals and the environment."
+  description: "We have transformed a strip of wasteland into a flourishing community resource and a haven for nature, where we learn to care for ourselves, others, plants, animals and the environment."
 )
 farm5.user = User.all[4]
 farm5.save
+url17 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630584727/be-natural/Farms/Oasis_Farm_Waterloo_u05bhz.jpg'
+attach_photo(url17, farm5, '17')
 
 farm6 = Farm.create(
   name: "Forty Hall Farm",
@@ -100,6 +214,8 @@ farm6 = Farm.create(
 )
 farm6.user = User.all[5]
 farm6.save
+url18 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630584728/be-natural/Farms/Forty_Hall_Farm_yo7jkf.jpg'
+attach_photo(url18, farm6, '18')
 
 farm7 = Farm.create(
   name: "Newham City Farm",
@@ -108,6 +224,8 @@ farm7 = Farm.create(
 )
 farm7.user = User.all[6]
 farm7.save
+url19 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630584728/be-natural/Farms/Newham_City_Farm_u36kjz.jpg'
+attach_photo(url19, farm7, '19')
 
 farm8 = Farm.create(
   name: "Deen City Farm",
@@ -116,6 +234,8 @@ farm8 = Farm.create(
 )
 farm8.user = User.all[7]
 farm8.save
+url20 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630584728/be-natural/Farms/Deen_City_Farm_mnvfye.jpg'
+attach_photo(url20, farm8, '20')
 
 farm9 = Farm.create(
   name: "West Hampstead",
@@ -124,6 +244,8 @@ farm9 = Farm.create(
 )
 farm9.user = User.all[8]
 farm9.save
+url21 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630584727/be-natural/Farms/West_Hampstead_ouxugi.jpg'
+attach_photo(url21, farm9, '21')
 
 farm10 = Farm.create(
   name: "Ealing Farmers",
@@ -132,6 +254,8 @@ farm10 = Farm.create(
 )
 farm10.user = User.all[9]
 farm10.save
+url22 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630584727/be-natural/Farms/Ealing_Farm_gryibr.jpg'
+attach_photo(url22, farm10, '22')
 
 product1 = Product.create(
   name: "Barloco Blue cheese",
@@ -141,6 +265,8 @@ product1 = Product.create(
 product1.farm = farm1
 product1.category = dairy
 product1.save
+url23 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630578039/be-natural/Spitalfields%20City%20Farm/Spitalfields_City_Farm_Dairy_1_Barloco_Blue_cheese_u39nim.jpg'
+attach_photo(url23, product1, '23')
 
 product2 = Product.create(
   name: "Carrick cheese",
@@ -150,6 +276,8 @@ product2 = Product.create(
 product2.farm = farm1
 product2.category = dairy
 product2.save
+url24 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630578039/be-natural/Spitalfields%20City%20Farm/Spitalfields_City_Farm_Dairy_2_Carrick_cheese_rgd8ku.jpg'
+attach_photo(url24, product2, '24')
 
 product3 = Product.create(
   name: "Cheddar cheese",
@@ -159,6 +287,10 @@ product3 = Product.create(
 product3.farm = farm1
 product3.category = dairy
 product3.save
+url25 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630578039/be-natural/Spitalfields%20City%20Farm/Spitalfields_City_Farm_Dairy_3_Cheddar_cheese_gbmblf.jpg'
+attach_photo(url25, product3, '25')
+
+farm_category1 = FarmCategory.create(category: dairy, farm: farm1)
 
 product4 = Product.create(
   name: "Organic Cauliflower",
@@ -168,6 +300,8 @@ product4 = Product.create(
 product4.farm = farm1
 product4.category = vegetables
 product4.save
+url26 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630578039/be-natural/Spitalfields%20City%20Farm/Spitalfields_City_Farm_Vegetables_1_Organic_Cauliflower_j1nkvu.jpg'
+attach_photo(url26, product4, '26')
 
 product5 = Product.create(
   name: "Organic British Artichoke",
@@ -177,6 +311,8 @@ product5 = Product.create(
 product5.farm = farm1
 product5.category = vegetables
 product5.save
+url27 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630578040/be-natural/Spitalfields%20City%20Farm/Spitalfields_City_Farm_Vegetables_2_Organic_British_Artichoke_y1qoy1.jpg'
+attach_photo(url27, product5, '27')
 
 product6 = Product.create(
   name: "Organic Baby Courgette Flowers",
@@ -186,6 +322,10 @@ product6 = Product.create(
 product6.farm = farm1
 product6.category = vegetables
 product6.save
+url28 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630578039/be-natural/Spitalfields%20City%20Farm/Spitalfields_City_Farm_Vegetables_3_Organic_Baby_Courgette_Flowers_nxqtvq.jpg'
+attach_photo(url28, product6, '28')
+
+farm_category2 = FarmCategory.create(category: vegetables, farm: farm1)
 
 product7 = Product.create(
   name: "Centre Cut Trout Fillet",
@@ -195,6 +335,8 @@ product7 = Product.create(
 product7.farm = farm2
 product7.category = fish
 product7.save
+url29 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630578262/be-natural/Surrey%20Docks%20Farm/Surrey_Docks_Farm_Fish_1_Centre_Cut_Trout_Fillet_as43hn.jpg'
+attach_photo(url29, product7, '29')
 
 product8 = Product.create(
   name: "Coho Salmon Fillets",
@@ -204,6 +346,8 @@ product8 = Product.create(
 product8.farm = farm2
 product8.category = fish
 product8.save
+url30 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630578261/be-natural/Surrey%20Docks%20Farm/Surrey_Docks_Farm_Fish_2_Coho_Salmon_Fillets_vpmnpq.jpg'
+attach_photo(url30, product8, '30')
 
 product9 = Product.create(
   name: "Sea Bass",
@@ -213,6 +357,10 @@ product9 = Product.create(
 product9.farm = farm2
 product9.category = fish
 product9.save
+url31 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630578261/be-natural/Surrey%20Docks%20Farm/Surrey_Docks_Farm_Fish_3_Sea_Bass_rd3frm.jpg'
+attach_photo(url31, product9, '31')
+
+farm_category3 = FarmCategory.create(category: fish, farm: farm2)
 
 product10 = Product.create(
   name: "Organic Sirloin Steak",
@@ -222,6 +370,8 @@ product10 = Product.create(
 product10.farm = farm2
 product10.category = meat
 product10.save
+url32 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630578262/be-natural/Surrey%20Docks%20Farm/Surrey_Docks_Farm_Meat_1_Organic_Sirloin_Steak_u2c2yq.jpg'
+attach_photo(url32, product10, '32')
 
 product11 = Product.create(
   name: "Organic Rump Steak",
@@ -231,6 +381,8 @@ product11 = Product.create(
 product11.farm = farm2
 product11.category = meat
 product11.save
+url33 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630578261/be-natural/Surrey%20Docks%20Farm/Surrey_Docks_Farm_Meat_2_Organic_Rump_Steak_andgtq.jpg'
+attach_photo(url33, product11, '33')
 
 product12 = Product.create(
   name: "Pasture Raised Whole Chicken",
@@ -240,6 +392,10 @@ product12 = Product.create(
 product12.farm = farm2
 product12.category = meat
 product12.save
+url34 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630578261/be-natural/Surrey%20Docks%20Farm/Surrey_Docks_Farm_Meat_3_Pasture_Raised_Whole_Chicken_ncv2ps.jpg'
+attach_photo(url34, product12, '34')
+
+farm_category4 = FarmCategory.create(category: meat, farm: farm2)
 
 product13 = Product.create(
   name: "Organic True Spinach",
@@ -249,6 +405,8 @@ product13 = Product.create(
 product13.farm = farm3
 product13.category = vegetables
 product13.save
+url35 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630578201/be-natural/Stepney%20City%20Farm/Stepney_City_Farm_Vegetables_1_Organic_True_Spinach_gwmzby.jpg'
+attach_photo(url35, product13, '35')
 
 product14 = Product.create(
   name: "Organic Rhubarb",
@@ -258,6 +416,8 @@ product14 = Product.create(
 product14.farm = farm3
 product14.category = vegetables
 product14.save
+url36 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630578204/be-natural/Stepney%20City%20Farm/Stepney_City_Farm_Vegetables_2_Organic_Rhubarb_grnmpo.jpg'
+attach_photo(url36, product14, '36')
 
 product15 = Product.create(
   name: "Organic Bunched Beetroot",
@@ -267,6 +427,10 @@ product15 = Product.create(
 product15.farm = farm3
 product15.category = vegetables
 product15.save
+url37 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630578204/be-natural/Stepney%20City%20Farm/Stepney_City_Farm_Vegetables_3_Organic_Bunched_Beetroot_l5zog2.jpg'
+attach_photo(url37, product15, '37')
+
+farm_category5 = FarmCategory.create(category: vegetables, farm: farm3)
 
 product16 = Product.create(
   name: "Strawberries",
@@ -276,6 +440,8 @@ product16 = Product.create(
 product16.farm = farm3
 product16.category = fruits
 product16.save
+url38 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630578202/be-natural/Stepney%20City%20Farm/Stepney_City_Farm_Fruits_1_Strawberries_npxu3i.jpg'
+attach_photo(url38, product16, '38')
 
 product17 = Product.create(
   name: "Organic Blueberries",
@@ -285,6 +451,8 @@ product17 = Product.create(
 product17.farm = farm3
 product17.category = fruits
 product17.save
+url39 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630578207/be-natural/Stepney%20City%20Farm/Stepney_City_Farm_Fruits_2_Organic_Blueberries_elbfsi.jpg'
+attach_photo(url39, product17, '39')
 
 product18 = Product.create(
   name: "Organic Raspberries",
@@ -294,6 +462,10 @@ product18 = Product.create(
 product18.farm = farm3
 product18.category = fruits
 product18.save
+url40 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630578204/be-natural/Stepney%20City%20Farm/Stepney_City_Farm_Fruits_3_Organic_Raspberries_suqwju.jpg'
+attach_photo(url40, product18, '40')
+
+farm_category6 = FarmCategory.create(category: fruits, farm: farm3)
 
 product19 = Product.create(
   name: "Organic Wheat Grain",
@@ -303,6 +475,8 @@ product19 = Product.create(
 product19.farm = farm4
 product19.category = crops
 product19.save
+url41 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630578285/be-natural/Vauxhall%20City%20Farm/Vauxhall_City_Farm_Crops_1_Organic_Wheat_Grain_x1npx9.jpg'
+attach_photo(url41, product19, '41')
 
 product20 = Product.create(
   name: "Wholegrain Wheat Flour",
@@ -312,6 +486,8 @@ product20 = Product.create(
 product20.farm = farm4
 product20.category = crops
 product20.save
+url42 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630578286/be-natural/Vauxhall%20City%20Farm/Vauxhall_City_Farm_Crops_2_Wholegrain_Wheat_Flour_kmkwmv.jpg'
+attach_photo(url42, product20, '42')
 
 product21 = Product.create(
   name: "Organic Pearl Barley",
@@ -321,6 +497,10 @@ product21 = Product.create(
 product21.farm = farm4
 product21.category = crops
 product21.save
+url43 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630578284/be-natural/Vauxhall%20City%20Farm/Vauxhall_City_Farm_Crops_3_Wholegrain_Wheat_Flour_whnjxp.jpg'
+attach_photo(url43, product21, '43')
+
+farm_category7 = FarmCategory.create(category: crops, farm: farm4)
 
 product22 = Product.create(
   name: "Organic Peaches",
@@ -330,6 +510,9 @@ product22 = Product.create(
 product22.farm = farm4
 product22.category = fruits
 product22.save
+url44 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630578285/be-natural/Vauxhall%20City%20Farm/Vauxhall_City_Farm_Fruits_1_Organic_Peaches_pjwack.jpg'
+attach_photo(url44, product22, '44')
+
 
 product23 = Product.create(
   name: "Organic Nectarines",
@@ -339,6 +522,8 @@ product23 = Product.create(
 product23.farm = farm4
 product23.category = fruits
 product23.save
+url45 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630578285/be-natural/Vauxhall%20City%20Farm/Vauxhall_City_Farm_Fruits_2_Organic_Nectarines_iqi4ht.jpg'
+attach_photo(url45, product23, '45')
 
 product24 = Product.create(
   name: "English Cox Apples",
@@ -348,6 +533,10 @@ product24 = Product.create(
 product24.farm = farm4
 product24.category = fruits
 product24.save
+url46 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630578285/be-natural/Vauxhall%20City%20Farm/Vauxhall_City_Farm_Fruits_3_English_Cox_Apples_ct277e.jpg'
+attach_photo(url46, product24, '46')
+
+farm_category8 = FarmCategory.create(category: fruits, farm: farm4)
 
 product25 = Product.create(
   name: "Organic Bunched Carrots",
@@ -357,6 +546,8 @@ product25 = Product.create(
 product25.farm = farm5
 product25.category = vegetables
 product25.save
+url47 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630577872/be-natural/Oasis%20Farm%20Waterloo/Oasis_Farm_Waterloo_Vegetables_1_Organic_Bunched_Carrots_avuoga.jpg'
+attach_photo(url47, product25, '47')
 
 product26 = Product.create(
   name: "Organic Large Potatoes",
@@ -366,6 +557,8 @@ product26 = Product.create(
 product26.farm = farm5
 product26.category = vegetables
 product26.save
+url48 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630577872/be-natural/Oasis%20Farm%20Waterloo/Oasis_Farm_Waterloo_Vegetables_2_Organic_Large_Potatoes_m1qzb6.jpg'
+attach_photo(url48, product26, '48')
 
 product27 = Product.create(
   name: "Organic Red Onions",
@@ -375,6 +568,10 @@ product27 = Product.create(
 product27.farm = farm5
 product27.category = vegetables
 product27.save
+url49 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630577872/be-natural/Oasis%20Farm%20Waterloo/Oasis_Farm_Waterloo_Vegetables_3_Organic_Red_Onions_dhrvj3.jpg'
+attach_photo(url49, product27, '49')
+
+farm_category9 = FarmCategory.create(category: vegetables, farm: farm5)
 
 product28 = Product.create(
   name: "Organic unroasted buckwheat",
@@ -384,6 +581,8 @@ product28 = Product.create(
 product28.farm = farm5
 product28.category = crops
 product28.save
+url50 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630577872/be-natural/Oasis%20Farm%20Waterloo/Oasis_Farm_Waterloo_Crops_1_Organic_unroasted_buckwheat_olo9p0.jpg'
+attach_photo(url50, product28, '50')
 
 product29 = Product.create(
   name: "Organic Bulgur Wheat",
@@ -393,6 +592,8 @@ product29 = Product.create(
 product29.farm = farm5
 product29.category = crops
 product29.save
+url51 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630577872/be-natural/Oasis%20Farm%20Waterloo/Oasis_Farm_Waterloo_Crops_2_Organic_Bulgur_Wheat_es6qwn.jpg'
+attach_photo(url51, product29, '51')
 
 product30 = Product.create(
   name: "Organic Wholemeal Rye Flour",
@@ -402,6 +603,10 @@ product30 = Product.create(
 product30.farm = farm5
 product30.category = crops
 product30.save
+url52 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630577872/be-natural/Oasis%20Farm%20Waterloo/Oasis_Farm_Waterloo_Crops_2_Organic_Wholemeal_Rye_Flour_go8utz.jpg'
+attach_photo(url52, product30, '52')
+
+farm_category10 = FarmCategory.create(category: crops, farm: farm5)
 
 product31 = Product.create(
   name: "Organic Spatchcock Chicken",
@@ -411,6 +616,8 @@ product31 = Product.create(
 product31.farm = farm6
 product31.category = meat
 product31.save
+url53 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630577840/be-natural/Forty%20Hall%20Farm/Forty_Hall_Farm_Meat_1_Organic_Spatchcock_Chicken_jgdvxc.jpg'
+attach_photo(url53, product31, '53')
 
 product32 = Product.create(
   name: "Rack of Lamb",
@@ -420,6 +627,8 @@ product32 = Product.create(
 product32.farm = farm6
 product32.category = meat
 product32.save
+url54 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630577840/be-natural/Forty%20Hall%20Farm/Forty_Hall_Farm_Meat_2_Rack_of_Lamb_unjleo.jpg'
+attach_photo(url54, product32, '54')
 
 product33 = Product.create(
   name: "Pasture Raised Whole Duck",
@@ -429,6 +638,10 @@ product33 = Product.create(
 product33.farm = farm6
 product33.category = meat
 product33.save
+url55 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630577840/be-natural/Forty%20Hall%20Farm/Forty_Hall_Farm_Meat_3_Pasture_Raised_Whole_Duck_idzsl9.jpg'
+attach_photo(url55, product33, '55')
+
+farm_category11 = FarmCategory.create(category: meat, farm: farm6)
 
 product34 = Product.create(
   name: "Organic Tenderstem Broccoli",
@@ -438,6 +651,8 @@ product34 = Product.create(
 product34.farm = farm6
 product34.category = vegetables
 product34.save
+url56 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630577840/be-natural/Forty%20Hall%20Farm/Forty_Hall_Farm_Vegetables_1_Organic_Tenderstem_Broccoli_fhc1yr.jpg'
+attach_photo(url56, product34, '56')
 
 product35 = Product.create(
   name: "Organic Broccoli",
@@ -447,6 +662,8 @@ product35 = Product.create(
 product35.farm = farm6
 product35.category = vegetables
 product35.save
+url57 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630577840/be-natural/Forty%20Hall%20Farm/Forty_Hall_Farm_Vegetables_2_Organic_Broccoli_swlgs7.jpg'
+attach_photo(url57, product35, '57')
 
 product36 = Product.create(
   name: "Organic Courgettes",
@@ -456,6 +673,10 @@ product36 = Product.create(
 product36.farm = farm6
 product36.category = vegetables
 product36.save
+url58 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630577840/be-natural/Forty%20Hall%20Farm/Forty_Hall_Farm_Vegetables_3_Organic_Courgettes_wwqejm.jpg'
+attach_photo(url58, product36, '58')
+
+farm_category12 = FarmCategory.create(category: vegetables, farm: farm6)
 
 product37 = Product.create(
   name: "Domaine Cavalier Rouge",
@@ -465,6 +686,8 @@ product37 = Product.create(
 product37.farm = farm7
 product37.category = wine
 product37.save
+url59 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630577855/be-natural/Newham%20City%20Farm/Newham_City_Farm_Wine_1_Domaine_Cavalier_Rouge_qlmevu.jpg'
+attach_photo(url59, product37, '59')
 
 product38 = Product.create(
   name: "Tinto Qvinto Arrio",
@@ -474,6 +697,8 @@ product38 = Product.create(
 product38.farm = farm7
 product38.category = wine
 product38.save
+url60 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630577855/be-natural/Newham%20City%20Farm/Newham_City_Farm_Wine_2_Tinto_Qvinto_Arrio_s1olsj.jpg'
+attach_photo(url60, product38, '60')
 
 product39 = Product.create(
   name: "Mariana Red",
@@ -483,6 +708,10 @@ product39 = Product.create(
 product39.farm = farm7
 product39.category = wine
 product39.save
+url61 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630577855/be-natural/Newham%20City%20Farm/Newham_City_Farm_Wine_3_Mariana_Red_ck59xd.jpg'
+attach_photo(url61, product39, '61')
+
+farm_category13 = FarmCategory.create(category: wine, farm: farm7)
 
 product40 = Product.create(
   name: "Organic Chicken Breast Mini Fillets",
@@ -492,6 +721,8 @@ product40 = Product.create(
 product40.farm = farm7
 product40.category = meat
 product40.save
+url62 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630577855/be-natural/Newham%20City%20Farm/Newham_City_Farm_Meat_1_Organic_Chicken_Breast_Mini_Fillets_v3wwq5.jpg'
+attach_photo(url62, product40, '62')
 
 product41 = Product.create(
   name: "Dry Cured Oak Smoked Streaky Bacon",
@@ -501,6 +732,8 @@ product41 = Product.create(
 product41.farm = farm7
 product41.category = meat
 product41.save
+url63 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630577855/be-natural/Newham%20City%20Farm/Newham_City_Farm_Meat_2_Dry_Cured_Oak_Smoked_Streaky_Bacon_wxrdgc.jpg'
+attach_photo(url63, product41, '63')
 
 product42 = Product.create(
   name: "Pasture Raised Duck Breasts",
@@ -510,6 +743,10 @@ product42 = Product.create(
 product42.farm = farm7
 product42.category = meat
 product42.save
+url64 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630577855/be-natural/Newham%20City%20Farm/Newham_City_Farm_Meat_3_Pasture_Raised_Duck_Breasts_qrssov.jpg'
+attach_photo(url64, product42, '64')
+
+farm_category14 = FarmCategory.create(category: meat, farm: farm7)
 
 product43 = Product.create(
   name: "Pasture Fed Organic Natural Beef Burgers",
@@ -519,6 +756,8 @@ product43 = Product.create(
 product43.farm = farm8
 product43.category = meat
 product43.save
+url65 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630577751/be-natural/Deen%20City%20Farm/Deen_City_Farm_Meat_1_Pasture_Fed_Organic_Natural_BeefBurgers_alqt65.jpg'
+attach_photo(url65, product43, '65')
 
 product44 = Product.create(
   name: "Chuck Burgers",
@@ -528,6 +767,8 @@ product44 = Product.create(
 product44.farm = farm8
 product44.category = meat
 product44.save
+url66 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630577751/be-natural/Deen%20City%20Farm/Deen_City_Farm_Meat_2_Chuck_Burgers_nnhviv.jpg'
+attach_photo(url66, product44, '66')
 
 product45 = Product.create(
   name: "Pasture Fed Rosy Veal Escalopes",
@@ -537,6 +778,10 @@ product45 = Product.create(
 product45.farm = farm8
 product45.category = meat
 product45.save
+url67 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630577751/be-natural/Deen%20City%20Farm/Deen_City_Farm_Meat_3_Pasture_Fed_Rosy_Veal_Escalopes_rje6ki.jpg'
+attach_photo(url67, product45, '67')
+
+farm_category15 = FarmCategory.create(category: meat, farm: farm8)
 
 product46 = Product.create(
   name: "Organic Semi Skimmed Milk",
@@ -546,6 +791,8 @@ product46 = Product.create(
 product46.farm = farm8
 product46.category = dairy
 product46.save
+url68 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630577750/be-natural/Deen%20City%20Farm/Deen_City_Farm_Dairy_1_Organic_Semi_Skimmed_Milk_rzqpw5.jpg'
+attach_photo(url68, product46, '68')
 
 product47 = Product.create(
   name: "Organic Skimmed Milk",
@@ -555,6 +802,8 @@ product47 = Product.create(
 product47.farm = farm8
 product47.category = dairy
 product47.save
+url69 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630577750/be-natural/Deen%20City%20Farm/Deen_City_Farm_Dairy_2_Organic_Skimmed_Milk_rjyafk.jpg'
+attach_photo(url69, product47, '69')
 
 product48 = Product.create(
   name: "Organic Whole Milk",
@@ -564,6 +813,10 @@ product48 = Product.create(
 product48.farm = farm8
 product48.category = dairy
 product48.save
+url70 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630577750/be-natural/Deen%20City%20Farm/Deen_City_Farm_Dairy_3_Organic_Whole_Milk_tt9atk.jpg'
+attach_photo(url70, product48, '70')
+
+farm_category16 = FarmCategory.create(category: dairy, farm: farm8)
 
 product49 = Product.create(
   name: "Hake Fillets",
@@ -573,6 +826,8 @@ product49 = Product.create(
 product49.farm = farm9
 product49.category = fish
 product49.save
+url71 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630578349/be-natural/West%20Hampstead/West_Hampstead_Fish_1_Hake_Fillets_kab0gq.jpg'
+attach_photo(url71, product49, '71')
 
 product50 = Product.create(
   name: "Lemon Sole Fillets",
@@ -582,6 +837,8 @@ product50 = Product.create(
 product50.farm = farm9
 product50.category = fish
 product50.save
+url72 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630578349/be-natural/West%20Hampstead/West_Hampstead_Fish_2_Lemon_Sole_Fillets_lc8jkm.jpg'
+attach_photo(url72, product50, '72')
 
 product51 = Product.create(
   name: "Gurnard Fillets",
@@ -591,6 +848,10 @@ product51 = Product.create(
 product51.farm = farm9
 product51.category = fish
 product51.save
+url73 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630578349/be-natural/West%20Hampstead/West_Hampstead_Fish_3_Gurnard_Fillets_mitrmy.jpg'
+attach_photo(url73, product51, '73')
+
+farm_category17 = FarmCategory.create(category: fish, farm: farm9)
 
 product52 = Product.create(
   name: "Organic Chicken Thighs",
@@ -600,6 +861,8 @@ product52 = Product.create(
 product52.farm = farm9
 product52.category = meat
 product52.save
+url74 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630578349/be-natural/West%20Hampstead/West_Hampstead_Meat_1_Organic_Chicken_Thighs_e1xn7e.jpg'
+attach_photo(url74, product52, '74')
 
 product53 = Product.create(
   name: "81 Day Chicken Thighs",
@@ -609,6 +872,8 @@ product53 = Product.create(
 product53.farm = farm9
 product53.category = meat
 product53.save
+url75 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630578349/be-natural/West%20Hampstead/West_Hampstead_Meat_2_81_Day_Chicken_Thighs_zb4koi.jpg'
+attach_photo(url75, product53, '75')
 
 product54 = Product.create(
   name: "Organic Chicken Drumsticks",
@@ -618,6 +883,10 @@ product54 = Product.create(
 product54.farm = farm9
 product54.category = meat
 product54.save
+url76 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630578349/be-natural/West%20Hampstead/West_Hampstead_Meat_3_Organic_Chicken_Drumsticks_a5kzii.jpg'
+attach_photo(url76, product54, '76')
+
+farm_category18 = FarmCategory.create(category: meat, farm: farm9)
 
 product55 = Product.create(
   name: "Pure & Simple ice-cream",
@@ -627,6 +896,8 @@ product55 = Product.create(
 product55.farm = farm10
 product55.category = dairy
 product55.save
+url77 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630577815/be-natural/Ealing%20Farmers/Ealing_Farmers_dairy_1_Pure___Simple_ice-cream_r3elip.jpg'
+attach_photo(url77, product55, '77')
 
 product56 = Product.create(
   name: "Lemon Curd ice-cream",
@@ -636,6 +907,8 @@ product56 = Product.create(
 product56.farm = farm10
 product56.category = dairy
 product56.save
+url78 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630577815/be-natural/Ealing%20Farmers/Ealing_Farmers_dairy_2_Lemon_Curd_ice-cream_ggmhvx.jpg'
+attach_photo(url78, product56, '78')
 
 product57 = Product.create(
   name: "Chocolate & Ginger ice-cream",
@@ -645,6 +918,10 @@ product57 = Product.create(
 product57.farm = farm10
 product57.category = dairy
 product57.save
+url79 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630577815/be-natural/Ealing%20Farmers/Ealing_Farmers_dairy_3_Chocolate___Ginger_ice-cream_faux0l.jpg'
+attach_photo(url79, product57, '79')
+
+farm_category19 = FarmCategory.create(category: dairy, farm: farm10)
 
 product58 = Product.create(
   name: "Mackerel",
@@ -654,6 +931,8 @@ product58 = Product.create(
 product58.farm = farm10
 product58.category = fish
 product58.save
+url80 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630577816/be-natural/Ealing%20Farmers/Ealing_Farmers_Fish_1_Mackerel_mwnrnt.jpg'
+attach_photo(url80, product58, '80')
 
 product59 = Product.create(
   name: "Organic Sardines",
@@ -663,6 +942,8 @@ product59 = Product.create(
 product59.farm = farm10
 product59.category = fish
 product59.save
+url81 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630577816/be-natural/Ealing%20Farmers/Ealing_Farmers_Fish_2_Organic_Sardines_xgkdgx.jpg'
+attach_photo(url81, product59, '81')
 
 product60 = Product.create(
   name: "Organic Salmon Fillets",
@@ -672,5 +953,7 @@ product60 = Product.create(
 product60.farm = farm10
 product60.category = fish
 product60.save
+url82 = 'https://res.cloudinary.com/olya-kolesova/image/upload/v1630577815/be-natural/Ealing%20Farmers/Ealing_Farmers_Fish_3_Organic_Salmon_Fillets_qiwwsm.jpg'
+attach_photo(url82, product60, '82')
 
 puts "Seeds have been created"

@@ -1,11 +1,12 @@
 <div class=container>
-<h2>
-  <%= @product.name %>
-</h2>
-<h4>
-  £ <%= @product.price %>
-</h4>
-<%= @product.description %>
+  <%= cl_image_tag @product.photo.key, height: 1000, width: 800, crop: :fill %>
+  <h2>
+    <%= @product.name %>
+  </h2>
+  <h4>
+    £ <%= @product.price %>
+  </h4>
+  <%= @product.description %>
 </div>
 
 <div class="form w-25">
@@ -22,6 +23,7 @@
     <%= f.input :price %>
     <%# <%= f.input :category, collection: @categories, placeholder: @product.category.name %>
     <%= f.input :description %>
+    <%= f.input :photo, as: :file %>
     <%= f.submit "Update product", class: "btn btn-success" %>
     <% end %>
   </div>
