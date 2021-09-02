@@ -1,29 +1,28 @@
-
-<nav class="navbar navbar-expand-lg navbar-light bg-light my-navbar">
+<nav class="navbar navbar-light bg-light my-navbar">
   <%=  link_to root_path do %>
     <%= image_tag 'milk.png' %>
   <% end %>
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul class="navbar-nav">
+    <ul>
       <li class="nav-item">
-        <span><a class="nav-link a-link" href="#">Features</a><span>
+        <span><%= link_to "Farms", farms_path, class: "nav-link drop-down drop-border" %><span>
       </li>
-      <li class="nav-item">
-        <span><a class="nav-link a-link" href="#">Pricing</a><span>
-      </li>
-      <li class="nav-item dropdown">
-        <span><a class="nav-link dropdown-toggle a-link" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown link
-        </a><span>
-        <div class="dropdown-menu drop-down" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
+      <% if user_signed_in? %>
+        <li class="nav-item dropdown navbar-toggler accordian tabs nav-link drop-down drop-border" data-toggle="collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">Account
+            <span class="navbar-toggler-icon icon-move"></span>
+            <div class="nav-move">
+              <%= link_to "Orders", root_path, class: "nav-link drop-down drop-border" %>
+              <%= link_to "Example 1", root_path, class: "nav-link drop-down drop-border" %>
+              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link drop-down drop-border" %>
+            </div>
+        </li>
+        <% else %>
+          <li class="nav-item">
+              <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+              <%= link_to "Sign Up", new_user_registration_path, class: "nav-link" %>
+          </li>
+        <% end %>
       </li>
     </ul>
   </div>
