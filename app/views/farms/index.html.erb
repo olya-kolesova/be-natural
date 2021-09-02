@@ -1,13 +1,17 @@
 <div class='container mt-8'>
-  <h3>FARMS INDEX</h3>
-  <% @farms.each do |farm| %>
-    <div class='row'>
-    <h2>
-      <%= link_to farm.name, farm_path(farm) %>
-    </h2>
-    <p>
-      <%= farm.location %>
-    </p>
+  <div class='newspaper-bordered'>  
+    <h2>FARMS INDEX</h2>
+    <div class="farms-container">
+      <% @farms.each do |farm| %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+          <h2><%= link_to farm.name, farm_path(farm) %></h2>
+          <div class="farm-category">
+            <p> farm categories placehold </p>
+          </div>
+        </div>
+      <% end %>
     </div>
-  <% end %>
+  </div>
 </div>
+
+

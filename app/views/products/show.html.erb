@@ -1,12 +1,9 @@
-<div class=container>
-  <%= cl_image_tag @product.photo.key, height: 1000, width: 800, crop: :fill %>
-  <h2>
-    <%= @product.name %>
-  </h2>
-  <h4>
-    £ <%= @product.price %>
-  </h4>
-  <%= @product.description %>
+<div class="card-product">
+   <%= cl_image_tag @product.photo.key, height: 1000, width: 800, crop: :fill %>
+  <div class="card-product-infos">
+    <h2><%= @product.name %>: £<%= sprintf('%.2f', @product.price.round(2)) %></h2>
+    <p><%= @product.description %>.</p>
+  </div>
 </div>
 
 <div class="form w-25">
@@ -15,6 +12,7 @@
     <%= f.submit "Add to basket", class: "btn btn-success" %>
   <% end %>
 </div>
+
 
 <% if @product.farm.user == current_user %>
   <div class="container">
@@ -28,3 +26,4 @@
     <% end %>
   </div>
 <% end %>
+

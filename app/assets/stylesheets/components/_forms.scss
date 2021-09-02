@@ -1,0 +1,62 @@
+
+.container-form {
+  width: 70%;
+  padding: 30px 90px 90px 90px;
+  border: 6px solid rgba(0, 0, 0, 0.3);
+  box-shadow: 20px 20px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 50px;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+}
+.container-form h2 {
+  color: rgba(0, 0, 0, 0.3);
+  font-size: 34px;
+  text-transform: uppercase;
+}
+
+
+.container0 {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 35px;
+  border: 6px solid rgba(0, 0, 0, 0.3);
+  box-shadow: 20px 20px 0 rgba(0, 0, 0, 0.3);
+    border-radius: 50px;
+    padding-top: 13px;
+    padding-bottom: 2px;
+    padding-left: 41px;
+    padding-right: 48px;
+}
+
+
+.container-another {
+  display: flex;
+  justify-content: center;
+  margin-top:32px;
+}
+.container-item-name {
+  width: 50%;
+}
+
+.container-title {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 35px;
+  border: 6px solid rgba(0, 0, 0, 0.3);
+  box-shadow: 20px 20px 0 rgba(0, 0, 0, 0.3);
+    border-radius: 50px;
+    padding-top: 13px;
+    padding-bottom: 2px;
+    padding-left: 41px;
+    padding-right: 80px;
+}
+
+.container7 {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 82px;
+    margin-bottom: -38px;
+    font-family:'Noticia Text', serif;
+    font-weight: bold;
+}

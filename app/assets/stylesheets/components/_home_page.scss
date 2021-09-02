@@ -1,3 +1,7 @@
+container-body {
+  min-height: calc(100vh - 100px);
+}
+
 .weatherforcastbox{
     // position: relative;
     border: 3px double #2f2f2f;
@@ -141,16 +145,7 @@ span:before, span:after {
   height: 1px;
   top: 50%;
   margin-top: -0.5px;
-  background: #fff;
-}
-
-span:before {
-  left: -2.5px;
-}
-span:after {
-  right: 2.5px;
-  background:black;
-  transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+  background: #ABA995;
 }
 
 span:hover:before {
@@ -159,11 +154,23 @@ span:hover:before {
   transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
-span:hover:after {
-  background: transparent;
-  width: 100%;
-  transition: 0s;
-}
+
+// span:before {
+//   left: -2.5px;
+// }
+// span:after {
+//   right: 2.5px;
+//   background:black;
+//   transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+// }
+
+
+
+// span:hover:after {
+//   background: transparent;
+//   width: 100%;
+//   transition: 0s;
+// }
 .content{
     font-size: 0;
     line-height: 0;
