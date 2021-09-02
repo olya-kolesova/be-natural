@@ -1,4 +1,5 @@
 <h2>Basket</h2>
+<div class="wrapper">
 <% @order_products.each do |order_product| %>
 <div>
   <%= order_product.product.name %>
@@ -9,3 +10,4 @@
   <%= order_product.product.price * order_product.quantity %>
 </div>
 <% end %>
+</div>
