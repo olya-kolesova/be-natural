@@ -2,14 +2,15 @@
  <div class="container-another">
   <div class="container-form">
       <h2>Basket</h2>
-      <div class="container0">
-      <h4 id="header">Quantity</h4>
-      <h4>Price</h4>
+      <div class="container-title">
+        <span class='placeholder'></span>
+        <h4 id="header">Quantity</h4>
+        <h4>Price</h4>
       </div>
       <% @order_products.each do |order_product| %>
     <div class="container0">
 
-      <div class="container01">
+      <div class="container-item-name">
        <div class="form-group"> <%= order_product.product.name %></div>
       </div>
       <div class="container01">
