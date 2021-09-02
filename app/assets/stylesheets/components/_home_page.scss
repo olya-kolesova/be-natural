@@ -1,3 +1,7 @@
+container-body {
+  min-height: calc(100vh - 100px);
+}
+
 .weatherforcastbox{
     // position: relative;
     border: 3px double #2f2f2f;
