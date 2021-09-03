@@ -18,14 +18,14 @@
       <div class="col-6">
         <div class="card-product">
           <div class="d-flex align-items-center">
-            <h4>
+            <h3>
               <%= link_to product.name, product_path(product) %>
               <% if product.farm.user == current_user %>
                 <%= link_to farm_path(product.farm), method: :delete, data: {confirm: "Are you sure you would like to delete this product?"} do %>
                   <i class="fas fa-trash"></i>
                 <% end %>
               <% end %>
-            </h4>
+            </h3>
             <div>
               <%= cl_image_tag product.photo.key, height: 800, crop: :fill %>
               <h6>£<%= product.price %></h6>
