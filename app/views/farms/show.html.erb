@@ -41,18 +41,29 @@
       </div>
     <% end %>
   </div>
-</div>
-
-<% if @farm.user == current_user %>
+  <% if @farm.user == current_user %>
   <div class="container w-50">
+    <br>
     <h3>Add a new product to your farm</h3>
       <%= simple_form_for [@farm, @product] do |f| %>
+      <div class="container03 justify-content-center">
       <%= f.input :name %>
+      </div>
+      <div class="container03 justify-content-center">
       <%= f.input :price %>
+      </div>
+      <div class="container03 justify-content-center">
       <%= f.input :category, collection: @categories %>
+      </div>
+      <div class="container03 justify-content-center">
       <%= f.input :description %>
+      </div>
+      <div class="container03 justify-content-center">
       <%= f.input :photo, as: :file %>
+      </div>
       <%= f.submit "Create product", class: "btn btn-success" %>
       <% end %>
   </div>
 <% end %>
+
+</div>
