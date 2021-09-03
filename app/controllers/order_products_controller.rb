@@ -13,6 +13,13 @@ class OrderProductsController < ApplicationController
   def update
   end
 
+  def destroy
+    @order = Order.find_by(user: current_user)
+    @order_product = OrderProduct.find(params[:id])
+    @order_product.destroy
+    redirect_to order_path(@order)
+  end
+
   private
 
     def order_product_params
