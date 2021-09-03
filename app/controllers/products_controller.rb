@@ -28,8 +28,11 @@ class ProductsController < ApplicationController
   end
 
   def destroy
+    # @farm = Product.find(params[:farm_id])
     @product = Product.find(params[:id])
     @product.destroy
+    redirect_tob farm_path(@product.farm)
+
   end
 
   private
