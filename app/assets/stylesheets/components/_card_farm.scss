@@ -90,3 +90,17 @@
 .newspaper-bordered .card-category h2 {
   border: none;
 }
+
+.title-farm {
+  display: flex;
+  align-items: center;
+}
+
+.title-farm h2 {
+  width: 92%;
+}
+
+.title-farm h5 {
+  width: 8%;
+  margin-top: -20px;
+}
