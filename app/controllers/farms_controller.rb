@@ -24,9 +24,10 @@ class FarmsController < ApplicationController
     else
       render :new
     end
-
+  end
+    
     def edit; end
-
+    
     def update
       @farm.user = current_user
       if @farm.save
@@ -36,11 +37,10 @@ class FarmsController < ApplicationController
       end
     end
 
-    def destroy
-      @farm.user = current_user
-      @farm.destroy
-      redirect_to farms_path
-    end
+  def destroy
+    @farm.user = current_user
+    @farm.destroy
+    redirect_to farms_path
   end
 
   private
