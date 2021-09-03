@@ -1,29 +1,32 @@
-<div class="card-product">
-   <%= cl_image_tag @product.photo.key, height: 1000, width: 800, crop: :fill %>
-  <div class="card-product-infos">
-    <h2><%= @product.name %>: £<%= sprintf('%.2f', @product.price.round(2)) %></h2>
-    <p><%= @product.description %>.</p>
+<div class='container mt-8'>
+  <div class='newspaper-bordered'>
+    <header></header>
+    <div class="products-container">
+
+      <div class="container-form">
+        <header>Product Info</header>
+        <%= cl_image_tag @product.photo.key, height: 1000, width: 800, crop: :fill %>
+          <h2><%= @product.name %>: £<%= sprintf('%.2f', @product.price.round(2)) %></h2>
+          <p><%= @product.description %>.</p>
+          <div class="form w-25">
+            <%= simple_form_for [@product, @order_product] do |f| %>
+              <%= f.input :quantity %>
+              <%= f.submit "Add to basket", class: "btn btn-success" %>
+            <% end %>
+          </div>
+          <% if @product.farm.user == current_user %>
+            <div class="container">
+              <%= simple_form_for [@product] do |f| %>
+              <%= f.input :name %>
+              <%= f.input :price %>
+              <%# <%= f.input :category, collection: @categories, placeholder: @product.category.name %>
+              <%= f.input :description %>
+              <%= f.input :photo, as: :file %>
+              <%= f.submit "Update product", class: "btn btn-success" %>
+              <% end %>
+            </div>
+          <% end %>
+      </div>
+    </div>
   </div>
 </div>
-
-<div class="form w-25">
-  <%= simple_form_for [@product, @order_product] do |f| %>
-    <%= f.input :quantity %>
-    <%= f.submit "Add to basket", class: "btn btn-success" %>
-  <% end %>
-</div>
-
-
-<% if @product.farm.user == current_user %>
-  <div class="container">
-    <%= simple_form_for [@product] do |f| %>
-    <%= f.input :name %>
-    <%= f.input :price %>
-    <%# <%= f.input :category, collection: @categories, placeholder: @product.category.name %>
-    <%= f.input :description %>
-    <%= f.input :photo, as: :file %>
-    <%= f.submit "Update product", class: "btn btn-success" %>
-    <% end %>
-  </div>
-<% end %>
-
