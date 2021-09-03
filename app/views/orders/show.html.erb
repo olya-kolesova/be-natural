@@ -22,9 +22,13 @@
         <% end %>
     </div>
     <% end %>
-      <div class="container7">
-        <span><%= link_to "Go back", farm_path %><span>
-      </div>
+    <div class="container7">
+      <% if @order_products.any? %>
+        <span><%= link_to "Go back", farm_path(@order_products.last.product.farm) %><span>
+      <% else %>
+        <span><%= link_to "Go back", root_path %><span>
+      <% end %>
+    </div>
     </div>
     <div class="container-go-back">
     </div>
