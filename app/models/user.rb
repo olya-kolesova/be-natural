@@ -12,6 +12,5 @@ class User < ApplicationRecord
 
   def order_create
     Order.create(user: self)
-
   end
 end

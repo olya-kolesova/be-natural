@@ -28,8 +28,15 @@
   </div>
   <ul class="checkout">
       <li class="nav-item">
-        <%# <span><%= link_to "Checkout", order_path(Order.last.id), class: "nav-link drop-down drop-border" %><span>
+        <span><%= link_to "Checkout", order_path(Order.last.id), class: "nav-link drop-down drop-border"%><span>
       </li>
     </ul>
+  <% if user_signed_in? %>
+    <ul class="checkout">
+        <li class="nav-item">
+          <%= link_to "Orders", order_path(current_user.orders.first), class: "nav-link drop-down drop-border" %>
+        </li>
+      </ul>
+  <% end %>
 <%= Date.today.strftime(" %A, %B %e %Y") %>
 </nav>

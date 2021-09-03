@@ -49,6 +49,40 @@
   margin-bottom: 32px;
 }
 
+.products-container {
+  padding-left: 32px;
+  border-left: 1px solid;
+  padding-right: 32px;
+  border-right: 1px solid;
+
+  display: grid;
+  place-items: center;
+  grid-template-columns: 1fr;
+  grid-gap: 16px;
+}
+
+.products-container img{
+  height: 400px;
+  width: 400px;
+  margin: 30px 0px 0px 0px;
+}
+
+.products-container p {
+  width: 600px;
+}
+
+.products-container h1{
+  width: 600px;
+}
+
+.products-container form{
+  margin: 0px 0px 20px 0px;
+  align-self: end;
+}
+// .newspaper-bordered {
+//   float: left;
+// }
+
 .newspaper-bordered h2 {
   border-top: 1px solid;
   border-bottom: 1px solid;
