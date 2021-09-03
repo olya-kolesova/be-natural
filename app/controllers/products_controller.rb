@@ -31,7 +31,7 @@ class ProductsController < ApplicationController
     # @farm = Product.find(params[:farm_id])
     @product = Product.find(params[:id])
     @product.destroy
-    redirect_tob farm_path(@product.farm)
+    redirect_to farm_path(@product.farm)
 
   end
 

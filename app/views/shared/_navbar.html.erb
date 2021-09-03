@@ -10,7 +10,7 @@
         <li class="nav-item dropdown navbar-toggler accordian tabs nav-link drop-down drop-border" data-toggle="collapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">Account
             <span class="navbar-toggler-icon icon-move"></span>
             <div class="nav-move">
-              <%= link_to "Orders", order_path(current_user.orders.first), class: "nav-link drop-down drop-border" %>
+              <%# <%= link_to "Orders", order_path(Order.last.id), class: "nav-link drop-down drop-border" %>
               <%= link_to "Example 1", root_path, class: "nav-link drop-down drop-border" %>
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link drop-down drop-border" %>
             </div>
