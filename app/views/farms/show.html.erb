@@ -1,7 +1,8 @@
 
 <div class="text-center">
   <div class="title-farm">
-    <h2><%= @farm.name %></h2>
+    <h2><%= @farm.name %><h5><span><%= link_to "Go back", farms_path %></h5><span></h2>
+
   </div>
   <div class="card-farm-show">
     <%= cl_image_tag @farm.photo.key, height: 800, class: "img-farm" %>
