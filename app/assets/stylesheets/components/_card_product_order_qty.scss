@@ -1,11 +1,10 @@
 .card-product {
   margin-top: 16px;
   overflow: hidden;
-  height: 120px;
+  min-height: 120px;
   background: transparent;
   box-shadow: 5px 5px 3px rgb(200, 200, 200);
-  display: flex;
-  align-items: center;
+  background-color:#f6f5e0;
 }
 
 .card-product img {
@@ -15,7 +14,7 @@
 }
 
 .card-product h2 {
-  d-float: left;
+  // d-float: left;
   font-size: 16px;
   font-weight: bold;
   margin: 0;
