@@ -3,28 +3,41 @@
     <header></header>
     <div class="products-container">
 
-      <div class="container-form">
+      <div class="container-form justify-content-center">
         <header>Product Info</header>
         <%= cl_image_tag @product.photo.key, height: 1000, width: 800, crop: :fill %>
           <h2><%= @product.name %>: £<%= sprintf('%.2f', @product.price.round(2)) %></h2>
           <p><%= @product.description %>.</p>
-          <div class="form w-25">
+          <div class="container03 justify-content-center">
             <%= simple_form_for [@product, @order_product] do |f| %>
               <%= f.input :quantity %>
               <%= f.submit "Add to basket", class: "btn btn-success" %>
             <% end %>
           </div>
           <% if @product.farm.user == current_user %>
-            <div class="container">
+
+
               <%= simple_form_for [@product] do |f| %>
-              <%= f.input :name %>
-              <%= f.input :price %>
+              <div class="container03 justify-content-center">
+                <%= f.input :name %>
+              </div>
+              <div class="container03 justify-content-center">
+                <%= f.input :price %>
+              </div>
               <%# <%= f.input :category, collection: @categories, placeholder: @product.category.name %>
-              <%= f.input :description %>
+              <div class="container03 justify-content-center">
+                <%= f.input :description %>
+              </div>
+              <div class="container03 justify-content-center">
               <%= f.input :photo, as: :file %>
+              </div>
               <%= f.submit "Update product", class: "btn btn-success" %>
               <% end %>
             </div>
+            </div>
+
+
+
           <% end %>
       </div>
     </div>
