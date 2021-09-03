@@ -1,0 +1,40 @@
+.title-farm {
+  margin-bottom: 184px;
+  margin-top: 104px;
+}
+
+.title-farm h2 {
+  font-size: 56px;
+  font-weight: 600;
+}
+
+.card-farm-show {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.img-farm {
+  height: 640px;
+  width: 800px;
+  margin-left: 104px;
+  margin-top: 0;
+}
+.card-farm-show p {
+  text-align: justify;
+  margin-left: 96px;
+  margin-right: 104px;
+  margin-top: 0;
+}
+
+.grid-products {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-left: 104px;
+  margin-right: 104px;
+}
+
+.card-product img {
+    height: 100%;
+    width: 320px;
+    object-fit: cover;
+}
