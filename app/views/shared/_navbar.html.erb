@@ -26,6 +26,11 @@
       </li>
     </ul>
   </div>
+  <ul class="checkout">
+      <li class="nav-item">
+        <span><%= link_to "Checkout", order_path(Order.last.id), class: "nav-link drop-down drop-border"%><span>
+      </li>
+    </ul>
   <% if user_signed_in? %>
     <ul class="checkout">
         <li class="nav-item">
