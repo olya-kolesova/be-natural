@@ -1,11 +1,33 @@
-<h2>Basket</h2>
-<% @order_products.each do |order_product| %>
-<div>
-  <%= order_product.product.name %>
-  <%= link_to order_path(order_product.order), method: :delete, data: {confirm: "Are you sure you would like to delete this item from the basket?"} do %>
-    <i class="fas fa-trash"></i>
-  <% end %>
-  <%= order_product.quantity %>
-  <%= order_product.product.price * order_product.quantity %>
+ <div class="wrapper">
+ <div class="container-another">
+  <div class="container-form">
+      <h2>Basket</h2>
+      <div class="container-title">
+        <span class='placeholder'></span>
+        <h4 id="header">Quantity</h4>
+        <h4>Price</h4>
+      </div>
+      <% @order_products.each do |order_product| %>
+    <div class="container0">
+
+      <div class="container-item-name">
+       <div class="form-group"> <%= order_product.product.name %></div>
+      </div>
+      <div class="container01">
+        <%= order_product.quantity %>
+      </div>
+        <%= order_product.product.price * order_product.quantity %>
+        <%= link_to order_path(order_product.order), method: :delete, data: {confirm: "Are you sure you would like to delete this item from the basket?"} do %>
+          <i class="fas fa-trash"></i>
+        <% end %>
+    </div>
+    <% end %>
+      <div class="container7">
+        <span><%= link_to "Go back", farm_path %><span>
+      </div>
+    </div>
+    <div class="container-go-back">
+    </div>
+    </div>
+  </div>
 </div>
-<% end %>

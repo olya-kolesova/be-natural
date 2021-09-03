@@ -1,8 +1,13 @@
+ul {
+  display: flex;
+  align-items: baseline;
+}
 .my-navbar {
   background-color: #F6F2D5!important;
   margin-top: 20px;
   border-top: 1px solid #303030;
   border-bottom: 1px solid #303030;
+  height: 70px;
 }
 
 a.navbar {
@@ -45,4 +50,57 @@ img {
 .nav-link {
   font-family: 'Noticia Text', serif !important;
   color:black;
+}
+
+.accordion {
+  width: 100%;
+  min-width: 950px;
+  display: block;
+  list-style-type: none;
+  overflow: hidden;
+  height: 300px;
+  font-size: 0;
+  display: flex;
+  padding: 5px 5px 5px 5px;
+}
+
+.tabs {
+  display: flex;
+  width: 80px;
+  height:30px;
+  overflow: hidden;
+  position: relative;
+  margin: 0;
+  font-size: 16px;
+  padding: 5px 5px 5px 5px;
+  @include transition( all 0.4s 0.1s ease-in-out );
+
+  &:hover {
+    width: 450px;
+
+    .nav-link  {
+      a {
+        &:before {
+          margin-left: -100px;
+        }
+
+        &:after {
+          margin-left: -5px;
+        }
+      }
+    }
+  }
+}
+
+.nav-move {
+  display: flex;
+  margin-top: -7px;
+}
+
+.icon-move {
+  margin-top: -3px;
+}
+
+.checkout {
+  float: right;
 }

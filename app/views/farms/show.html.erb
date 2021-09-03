@@ -1,32 +1,31 @@
-<div class="container">
-  <div class="text-center">
+
+
+<div class="text-center">
+  <div class="title-farm">
     <h2><%= @farm.name %></h2>
+  </div>
+  <div class="card-farm-show">
+    <%= cl_image_tag @farm.photo.key, height: 800, class: "img-farm" %>
     <p><%= @farm.description %></p>
   </div>
-
+  <div class="card-footer-farm">
+  </div>
+</div>
+<div class="grid-products">
   <% @farm.products.each do |product| %>
     <div class="card-product">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-      <div class="card-product-infos">
-        <h2><%= product.name %>: £<%= sprintf('%.2f', product.price.round(2)) %></h2>
-        <p><%= product.description %>.</p>
-      </div>
-    </div>
-  <% end %>
-
-
-
-  <% @farm.products.each do |product| %>
-    <div class="ml-5">
       <h4>
-      <%= link_to product.name, product_path(product) %>
-      <% if product.farm.user == current_user %>
-        <%= link_to product_path(product), method: :delete, data: {confirm: "Are you sure you would like to delete this product?"} do %>
-          <i class="fas fa-trash"></i>
+        <%= link_to product.name, product_path(product) %>
+        <% if product.farm.user == current_user %>
+          <%= link_to farm_path(product.farm), method: :delete, data: {confirm: "Are you sure you would like to delete this product?"} do %>
+            <i class="fas fa-trash"></i>
+          <% end %>
         <% end %>
-      <% end %>
       </h4>
-      <h6>£<%= product.price %></h6>
+      <div>
+        <%= cl_image_tag product.photo.key, height: 800, crop: :fill %>
+        <h6>£<%= product.price %></h6>
+      </div>
       <div class="form w-25">
         <%= simple_form_for [product, @order_product] do |f| %>
           <%= f.input :quantity %>
@@ -34,19 +33,19 @@
         <% end %>
       </div>
     </div>
-
   <% end %>
-  <% if @farm.user == current_user %>
-    <div class="container w-50">
-      <h3>Add a new product to your farm</h3>
-        <%= simple_form_for [@farm, @product] do |f| %>
-          <%= f.input :name %>
-          <%= f.input :price %>
-          <%= f.input :category, collection: @categories %>
-          <%= f.input :description %>
-          <%= f.submit "Create product", class: "btn btn-success" %>
-        <% end %>
-    </div>
-  <% end %>
-
 </div>
+
+<% if @farm.user == current_user %>
+  <div class="container w-50">
+    <h3>Add a new product to your farm</h3>
+      <%= simple_form_for [@farm, @product] do |f| %>
+      <%= f.input :name %>
+      <%= f.input :price %>
+      <%= f.input :category, collection: @categories %>
+      <%= f.input :description %>
+      <%= f.input :photo, as: :file %>
+      <%= f.submit "Create product", class: "btn btn-success" %>
+      <% end %>
+  </div>
+<% end %>
