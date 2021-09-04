@@ -34,11 +34,13 @@
               <h6>£<%= product.price %></h6>
             </div>
           </div>
-          <div class="form w-100 d-flex justify-content-center">
+
+          <div id="form" class="form w-100 d-flex justify-content-center">
             <%= simple_form_for [product, @order_product], html: { class: 'd-flex align-items-center justify-content-center w-100 mb-2' } do |f| %>
               <%= f.input :quantity, label: false, placeholder: 'Quantity', wrapper_html: { class: 'mr-2 mb-0' } %>
               <span><%= f.submit "Add to basket" %><span>
             <% end %>
+
           </div>
         </div>
       </div>
@@ -69,4 +71,5 @@
   </div>
 <% end %>
 
+<%= javascript_pack_tag 'my_js' %>
 </div>
