@@ -11,13 +11,15 @@
             <span class="navbar-toggler-icon icon-move"></span>
             <div class="nav-move">
               <%# <%= link_to "Orders", order_path(Order.last.id), class: "nav-link drop-down drop-border" %>
-              <%= link_to "Basket", order_path(Order.last.id), class: "nav-link drop-down drop-border"%>
-              <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link drop-down drop-border" %>
+              <span><%= link_to "Basket", order_path(Order.last.id), class: "nav-link drop-down drop-border"%><span>
+              </div>
+              <div class="nav-move">
+              <span><%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link drop-down drop-border" %><span>
             </div>
         </li>
         <% else %>
           <li class="nav-item">
-             <span> <%= link_to "Login", new_user_session_path, class: "nav-link" %><span>
+             <span><%= link_to "Login", new_user_session_path, class: "nav-link" %><span>
           </li>
           <li class="nav-item">
              <span> <%= link_to "Sign Up", new_user_registration_path, class: "nav-link" %><span>
@@ -27,9 +29,9 @@
     </ul>
   </div>
   <% if user_signed_in? %>
-    <ul class="checkout">
+   <span> <ul class="checkout"><span>
         <li class="nav-item">
-          <%= link_to "Basket", order_path(current_user.orders.first), class: "nav-link drop-down drop-border" %>
+          <%# <%= link_to "Basket", order_path(current_user.orders.first), class: "nav-link drop-down drop-border" %>
         </li>
       </ul>
   <% end %>
