@@ -4,6 +4,13 @@ class FarmsController < ApplicationController
 
   def index
     @farms = Farm.all
+    @markers = @farms.geocoded.map do |farm|
+      {
+        lat: farm.latitude,
+        lng: farm.longitude
+        # image_url:
+      }
+    end
   end
 
   def show
@@ -25,9 +32,9 @@ class FarmsController < ApplicationController
       render :new
     end
   end
-    
+
     def edit; end
-    
+
     def update
       @farm.user = current_user
       if @farm.save
