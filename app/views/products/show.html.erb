@@ -11,8 +11,10 @@
           <div class="container03 justify-content-center">
             <%= simple_form_for [@product, @order_product] do |f| %>
               <%= f.input :quantity %>
-              <%= f.submit "Add to basket", class: "btn btn-success" %>
+
+              <span><%= f.submit "Add to basket"%><span>
             <% end %>
+
           </div>
           <% if @product.farm.user == current_user %>
 
@@ -31,7 +33,7 @@
               <div class="container03 justify-content-center">
               <%= f.input :photo, as: :file %>
               </div>
-              <%= f.submit "Update product", class: "btn btn-success" %>
+             <span> <%= f.submit "Update product"%><span>
               <% end %>
             </div>
             </div>
