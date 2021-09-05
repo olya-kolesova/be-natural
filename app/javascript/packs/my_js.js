@@ -9,9 +9,11 @@
 //   alert("Random Message");
 // });
 
-const form = document.getElementById("form");
-form.addEventListener("submit", (event) => {
+const form = document.querySelectorAll("form");
+form.forEach(function(element) {
+element.addEventListener("submit", function() {
   // let greeting = "Hello";
   // console.log(greeting);
   alert("Added to basket!")
+});
 });
