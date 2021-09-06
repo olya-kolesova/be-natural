@@ -4,7 +4,7 @@
     <div class="products-container">
 
       <div class="container-form justify-content-center">
-        <header>Product Info</header>
+        <header-product>Product Info</header-product>
         <%= cl_image_tag @product.photo.key, height: 1000, width: 800, crop: :fill %>
           <h2><%= @product.name %>: £<%= sprintf('%.2f', @product.price.round(2)) %></h2>
           <p><%= @product.description %>.</p>
