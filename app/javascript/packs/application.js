@@ -37,15 +37,26 @@ document.addEventListener('turbolinks:load', () => {
 
 import { initSweetalert } from '../plugins/init_sweetalert';
 
-initSweetalert('#sweet-alert-delete', {
-  title: "Are you sure you wish to delete your Farm?",
+initSweetalert('#sweet-alert-delete-product', {
+  title: "Are you sure you wish to delete this product from your farm?",
   text: "This action cannot be undone",
   icon: "warning",
   buttons: true
 }, (value) => {
   if (value) {
-    const link = document.querySelector('#delete-link');
+    const link = document.querySelector('#delete-link-prod');
     link.click();
   }
 });
 
+initSweetalert('#sweet-alert-delete-farm', {
+  title: "Are you sure you wish to delete this product from your farm?",
+  text: "This action cannot be undone",
+  icon: "warning",
+  buttons: true
+}, (value) => {
+  if (value) {
+    const link = document.querySelector('#delete-link-farm');
+    link.click();
+  }
+});
