@@ -271,7 +271,7 @@ attach_photo(url23, product1, '23')
 product2 = Product.create(
   name: "Carrick cheese",
   description: "A traditional handmade farmhouse cheese in a 500g wedge. Carrick has a deep, nutty and earthy flavour.  The aroma is rich and earthy, and the texture is firm and with a creamy finish. It will dry naturally with age.",
-  price: 14
+  price: 5.00
 )
 product2.farm = farm1
 product2.category = dairy
@@ -282,7 +282,7 @@ attach_photo(url24, product2, '24')
 product3 = Product.create(
   name: "Cheddar cheese",
   description: "Tangy, rich and with a satisfying bite, a traditional farmhouse cheddar, matured slowly in our cheese store for around 9 months. This cheese is made with unpasturised milk from our ethical dairy farm. It best consumed within 4 weeks.",
-  price: 15
+  price: 4.00
 )
 product3.farm = farm1
 product3.category = dairy
@@ -295,7 +295,7 @@ farm_category1 = FarmCategory.create(category: dairy, farm: farm1)
 product4 = Product.create(
   name: "Organic Cauliflower",
   description: "Our cauliflowers come leaves on, which have a flavour somewhere between cauliflower and sweet cabbage, enjoy these boiled for a few minutes or roasted with olive oil.",
-  price: 3
+  price: 3.00
 )
 product4.farm = farm1
 product4.category = vegetables
@@ -306,7 +306,7 @@ attach_photo(url26, product4, '26')
 product5 = Product.create(
   name: "Organic British Artichoke",
   description: "To prepare your Artichoke, remove all the tough outer leaves and the fibrous choke in the centre, rub with lemon and serve with a meze of Mediterranean dishes.",
-  price: 2.9
+  price: 2.90
 )
 product5.farm = farm1
 product5.category = vegetables
@@ -317,7 +317,7 @@ attach_photo(url27, product5, '27')
 product6 = Product.create(
   name: "Organic Baby Courgette Flowers",
   description: "Make the most of these British summer delights and snap them up fast! Only available for a few weeks every summer these courgette flowers are beautiful stuffed with soft cheese, herbs and deep fried.",
-  price: 5.4
+  price: 5.40
 )
 product6.farm = farm1
 product6.category = vegetables
@@ -330,7 +330,7 @@ farm_category2 = FarmCategory.create(category: vegetables, farm: farm1)
 product7 = Product.create(
   name: "Centre Cut Trout Fillet",
   description: "Sustainably farmed in Hampshire. A premium cut of trout.",
-  price: 15.27
+  price: 15.20
 )
 product7.farm = farm2
 product7.category = fish
@@ -341,7 +341,7 @@ attach_photo(url29, product7, '29')
 product8 = Product.create(
   name: "Coho Salmon Fillets",
   description: "Known for its orange-red flesh, delicate flavour and firm texture. It is also the richest in Omega 3 of all our salmons.",
-  price: 8.95
+  price: 8.90
 )
 product8.farm = farm2
 product8.category = fish
@@ -352,7 +352,7 @@ attach_photo(url30, product8, '30')
 product9 = Product.create(
   name: "Sea Bass",
   description: "Mainly sourced from smaller day boats across the South Coast from Sussex all the way through to Cornwall, we also source our white fish and premium smoked haddock from Peterhead in Scotland. Delicious roasted or grilled with a butter, lemon & parsley sauce.",
-  price: 6.45
+  price: 6.40
 )
 product9.farm = farm2
 product9.category = fish
@@ -365,7 +365,7 @@ farm_category3 = FarmCategory.create(category: fish, farm: farm2)
 product10 = Product.create(
   name: "Organic Sirloin Steak",
   description: "Certified 100% pasture fed by the Pasture for Life and organic by the Soil Association. All our beef is dry aged on the bone for 30 days, aged for tenderness & flavour.",
-  price: 9.27
+  price: 9.20
 )
 product10.farm = farm2
 product10.category = meat
@@ -376,7 +376,7 @@ attach_photo(url32, product10, '32')
 product11 = Product.create(
   name: "Organic Rump Steak",
   description: "Certified 100% pasture fed by the Pasture for Life and organic by the Soil Association. All our beef is dry aged on the bone for 30 days, aged for tenderness & flavour.",
-  price: 9.13
+  price: 9.10
 )
 product11.farm = farm2
 product11.category = meat
@@ -387,7 +387,7 @@ attach_photo(url33, product11, '33')
 product12 = Product.create(
   name: "Pasture Raised Whole Chicken",
   description: "These chickens live in small flocks. They forage on grasses and herbs across Sladesdown Farms Devon pastures. We believe a natural habitat and diet makes these chickens taste even better.",
-  price: 11.12
+  price: 11.10
 )
 product12.farm = farm2
 product12.category = meat
@@ -400,7 +400,7 @@ farm_category4 = FarmCategory.create(category: meat, farm: farm2)
 product13 = Product.create(
   name: "Organic True Spinach",
   description: "True Spinach is more delicate than perpetual spinach; it is smaller, sweeter and juicier, making it lovely used in salads or cooked.",
-  price: 2.43
+  price: 2.40
 )
 product13.farm = farm3
 product13.category = vegetables
@@ -411,7 +411,7 @@ attach_photo(url35, product13, '35')
 product14 = Product.create(
   name: "Organic Rhubarb",
   description: "We love growing rhubarb; it's a refreshing change from winter roots, and grows vigorously at a time when English fields are otherwise quite bare. The variety is Timperley Early, with tender, juicy stalks and tart flavour. Unlike the bright pink ‘forced’ rhubarb you’ll find in most supermarkets, our rhubarb is field-grown, its blush-pink stalks tinged with green.",
-  price: 4.23
+  price: 4.20
 )
 product14.farm = farm3
 product14.category = vegetables
@@ -422,7 +422,7 @@ attach_photo(url36, product14, '36')
 product15 = Product.create(
   name: "Organic Bunched Beetroot",
   description: "Dazzling red-purple organic beetroot puts a smile on the face and a spring in the step – there are plenty of ways to enjoy the health benefits of this vibrant root vegetable.",
-  price: 3.23
+  price: 3.20
 )
 product15.farm = farm3
 product15.category = vegetables
@@ -435,7 +435,7 @@ farm_category5 = FarmCategory.create(category: vegetables, farm: farm3)
 product16 = Product.create(
   name: "Strawberries",
   description: "Our Strawberries are bursting with the flavour of British Summertime. Grown & hand-picked with care by the team. We farm responsibly to encourage biodiversity & produce fruit with a sense of place. This is a Celebration of Seasonality!",
-  price: 3.14
+  price: 3.10
 )
 product16.farm = farm3
 product16.category = fruits
@@ -446,7 +446,7 @@ attach_photo(url38, product16, '38')
 product17 = Product.create(
   name: "Organic Blueberries",
   description: "Organically grown blueberries - sourced locally during the summer months, moving further afield out of peak season.",
-  price: 2.89
+  price: 2.80
 )
 product17.farm = farm3
 product17.category = fruits
@@ -457,7 +457,7 @@ attach_photo(url39, product17, '39')
 product18 = Product.create(
   name: "Organic Raspberries",
   description: "Organic raspberries, produced with nutrients from the soil and plenty of care from our dedicated growers. Sweet, juicy and aromatic, they're ideal for desserts or snacks.",
-  price: 2.89
+  price: 2.80
 )
 product18.farm = farm3
 product18.category = fruits
@@ -470,7 +470,7 @@ farm_category6 = FarmCategory.create(category: fruits, farm: farm3)
 product19 = Product.create(
   name: "Organic Wheat Grain",
   description: "Organic Wheat Grain is a traditional bakers grain of choice.  It has a rich, buttery flavour and makes reliable bakes over and over again.",
-  price: 2.71
+  price: 2.70
 )
 product19.farm = farm4
 product19.category = crops
@@ -481,7 +481,7 @@ attach_photo(url41, product19, '41')
 product20 = Product.create(
   name: "Wholegrain Wheat Flour",
   description: "Smooth wholegrain wheat flour is a popular ingredient in the preparation of buns, croissants, cakes, waffles, donuts, pancakes, muffins, cookies and other dishes. It is suitable for thickening soups or sauces and can be combined with other types of wheat and non-wheat flour.",
-  price: 1.47
+  price: 1.40
 )
 product20.farm = farm4
 product20.category = crops
@@ -492,7 +492,7 @@ attach_photo(url42, product20, '42')
 product21 = Product.create(
   name: "Organic Pearl Barley",
   description: "Pearl barley has a distinctive texture and unique, nutty taste. It holds up well during cooking, and absorbs the flavour of the cooking liquid.",
-  price: 2.76
+  price: 2.70
 )
 product21.farm = farm4
 product21.category = crops
@@ -505,7 +505,7 @@ farm_category7 = FarmCategory.create(category: crops, farm: farm4)
 product22 = Product.create(
   name: "Organic Peaches",
   description: "A lovely, sweet flat peach with almond overtones. These peaches will need ripening at home to bring out their best and sweetest flavour.",
-  price: 3.23
+  price: 3.20
 )
 product22.farm = farm4
 product22.category = fruits
@@ -517,7 +517,7 @@ attach_photo(url44, product22, '44')
 product23 = Product.create(
   name: "Organic Nectarines",
   description: "These nectarines are delicous once ripened. They are organic too, so no nasty pesticides.",
-  price: 3.56
+  price: 3.50
 )
 product23.farm = farm4
 product23.category = fruits
@@ -528,7 +528,7 @@ attach_photo(url45, product23, '45')
 product24 = Product.create(
   name: "English Cox Apples",
   description: "The classic English apple, sweet with a complex flavour and delicious bite. We found the these Cox's to be sweeter than any other we've tried.",
-  price: 2.94
+  price: 2.90
 )
 product24.farm = farm4
 product24.category = fruits
@@ -541,7 +541,7 @@ farm_category8 = FarmCategory.create(category: fruits, farm: farm4)
 product25 = Product.create(
   name: "Organic Bunched Carrots",
   description: "These super sweet carrots are grown in healthy nutritious soils, giving them a juicy, healthy crunch that we can't get enough of.",
-  price: 5.23
+  price: 5.20
 )
 product25.farm = farm5
 product25.category = vegetables
@@ -552,7 +552,7 @@ attach_photo(url47, product25, '47')
 product26 = Product.create(
   name: "Organic Large Potatoes",
   description: "These potatoes will be either Kelly or Cara variety, both of which are great for mashing, roasting, baking and chipping.",
-  price: 2.21
+  price: 2.20
 )
 product26.farm = farm5
 product26.category = vegetables
@@ -563,7 +563,7 @@ attach_photo(url48, product26, '48')
 product27 = Product.create(
   name: "Organic Red Onions",
   description: "Eaten raw, red onions tend to be strong flavoured and biting; cooking caramelises the juices and mellows the flavour.",
-  price: 1.97
+  price: 1.90
 )
 product27.farm = farm5
 product27.category = vegetables
@@ -576,7 +576,7 @@ farm_category9 = FarmCategory.create(category: vegetables, farm: farm5)
 product28 = Product.create(
   name: "Organic unroasted buckwheat",
   description: "The distinctive, musky flavour of buckwheat works well in stuffings, pilaffs, and as a substitute for rice with stews.",
-  price: 2.11
+  price: 2.10
 )
 product28.farm = farm5
 product28.category = crops
@@ -587,7 +587,7 @@ attach_photo(url50, product28, '50')
 product29 = Product.create(
   name: "Organic Bulgur Wheat",
   description: "This Organic Bulgur Wheat is made by removing the outer layer from wheat, which is then steamed, dried and cracked.",
-  price: 1.98
+  price: 1.90
 )
 product29.farm = farm5
 product29.category = crops
@@ -598,7 +598,7 @@ attach_photo(url51, product29, '51')
 product30 = Product.create(
   name: "Organic Wholemeal Rye Flour",
   description: "A distinctively tangy stoneground ancient grain flour for making close-textured breads, cakes and biscuits.",
-  price: 2.23
+  price: 2.20
 )
 product30.farm = farm5
 product30.category = crops
@@ -611,7 +611,7 @@ farm_category10 = FarmCategory.create(category: crops, farm: farm5)
 product31 = Product.create(
   name: "Organic Spatchcock Chicken",
   description: "Our birds enjoy a relaxed and natural upbringing with acres and acres of pastures free of any pesticides to roam across and forage. A wholesome diet of insects and grubs hiding in the ground and meadow grasses and herbs are supplemented by GM free organic corn to ensure that the birds are kept healthy,",
-  price: 11.48
+  price: 11.40
 )
 product31.farm = farm6
 product31.category = meat
@@ -622,7 +622,7 @@ attach_photo(url53, product31, '53')
 product32 = Product.create(
   name: "Rack of Lamb",
   description: "Taken from the lamb ribs, the rack is very popular as a great, impressive all rounder, that’s super quick to cook and easy to achieve perfectly crisp skin and tender, melt-in-the-mouth flesh. The cutlets are individual rib steaks taken from the rack and look beautiful on the plate. Best for: quick roasting or grilling",
-  price: 8.72
+  price: 8.70
 )
 product32.farm = farm6
 product32.category = meat
@@ -633,7 +633,7 @@ attach_photo(url54, product32, '54')
 product33 = Product.create(
   name: "Pasture Raised Whole Duck",
   description: "These ducks live in small flocks of two hundred. They forage on grasses and herbs across pastures. We believe a natural habitat and diet makes these ducks taste even better. They are then hung for a week to develop their flavour and texture",
-  price: 21.65
+  price: 21.60
 )
 product33.farm = farm6
 product33.category = meat
@@ -646,7 +646,7 @@ farm_category11 = FarmCategory.create(category: meat, farm: farm6)
 product34 = Product.create(
   name: "Organic Tenderstem Broccoli",
   description: "Until recently Tenderstem broccoli was only grown overseas, but the UK has perfect conditions for growing this tasty brassica and this has now become a local treat.",
-  price: 3.94
+  price: 3.90
 )
 product34.farm = farm6
 product34.category = vegetables
@@ -657,7 +657,7 @@ attach_photo(url56, product34, '56')
 product35 = Product.create(
   name: "Organic Broccoli",
   description: "Organic broccoli offers a wealth of vitamins and antioxidants. However, these can be destroyed if given the old-fashioned (over-boiling) treatment - a brief steaming of the florets does the trick, or pop in a covered bowl in the microwave with a spoonful of water.",
-  price: 3.68
+  price: 3.60
 )
 product35.farm = farm6
 product35.category = vegetables
@@ -668,7 +668,7 @@ attach_photo(url57, product35, '57')
 product36 = Product.create(
   name: "Organic Courgettes",
   description: "The courgette is a small narrow breed of squash or pumpkin. Modern Green Courgette varieties like the 'Ambassador' and 'Defender', are distant derivatives of the original squashes that would have originated in the Americas. They are believed to have been cultivated there for between five and ten thousand years, and were brought over to Europe following the discovery of the new world. The word 'Squash', is an abbreviation for the North American Indian word 'askutasquash', meaning 'eaten raw or uncooked'. Here in the UK, courgettes now grow prolifically in the peak summer months, but the season can often end suddenly in September. We see them as such a kitchen essential we have them on the shop all year round, buying these quality courgettes from Spain when not from the UK.",
-  price: 2.17
+  price: 2.10
 )
 product36.farm = farm6
 product36.category = vegetables
@@ -681,7 +681,7 @@ farm_category12 = FarmCategory.create(category: vegetables, farm: farm6)
 product37 = Product.create(
   name: "Domaine Cavalier Rouge",
   description: "VINTAGE – 2019 VARIETY – Cabernet Sauvignon, Syrah and Merlot ABV – 12.5%",
-  price: 13.23
+  price: 13.20
 )
 product37.farm = farm7
 product37.category = wine
@@ -692,7 +692,7 @@ attach_photo(url59, product37, '59')
 product38 = Product.create(
   name: "Tinto Qvinto Arrio",
   description: "VINTAGE – 2019 VARIETY – Tempranillo ABV – 12.5%",
-  price: 11.23
+  price: 11.20
 )
 product38.farm = farm7
 product38.category = wine
@@ -703,7 +703,7 @@ attach_photo(url60, product38, '60')
 product39 = Product.create(
   name: "Mariana Red",
   description: "VINTAGE – 2019 VARIETY – Touriga Nacional 40%, Aragonez 30%, Alicante Bouschet 20%, Trincadeira 10% ABV – 12.5%",
-  price: 10.23
+  price: 10.20
 )
 product39.farm = farm7
 product39.category = wine
@@ -716,7 +716,7 @@ farm_category13 = FarmCategory.create(category: wine, farm: farm7)
 product40 = Product.create(
   name: "Organic Chicken Breast Mini Fillets",
   description: "Our birds enjoy a relaxed and natural upbringing with acres and acres of luscious pastures free of any pesticides to roam across and forage. A wholesome diet of insects and grubs hiding in the ground and meadow grasses and herbs are supplemented by GM free organic corn to ensure that the birds are kept healthy.",
-  price: 10.57
+  price: 10.50
 )
 product40.farm = farm7
 product40.category = meat
@@ -727,7 +727,7 @@ attach_photo(url62, product40, '62')
 product41 = Product.create(
   name: "Dry Cured Oak Smoked Streaky Bacon",
   description: "Our bacon is dry cured by hand in very small batches. The bacon is cured in a simple mix of salt and muscavado sugar and then air dried for a week before gently smoking over smouldering oak chips. Our bacon is about as far as you can get from a a mass produced product. The dry curing, drying and smoking all help to remove excess moisture from the bacon helping it to crisp up beautifully in the pan.",
-  price: 5.23
+  price: 5.20
 )
 product41.farm = farm7
 product41.category = meat
@@ -738,7 +738,7 @@ attach_photo(url63, product41, '63')
 product42 = Product.create(
   name: "Pasture Raised Duck Breasts",
   description: "These ducks live in small flocks of two hundred. They forage on grasses and herbs across pastures. We believe a natural habitat and diet makes these ducks taste even better. They are then hung for a week to develop their flavour and texture",
-  price: 14.62
+  price: 14.60
 )
 product42.farm = farm7
 product42.category = meat
@@ -751,7 +751,7 @@ farm_category14 = FarmCategory.create(category: meat, farm: farm7)
 product43 = Product.create(
   name: "Pasture Fed Organic Natural Beef Burgers",
   description: "Coarse ground, dry aged dairy beef, balanced with a blend of lighter beef and the more richly flavoured cow beef. Nothing else added. Season before or after cooking.",
-  price: 4.42
+  price: 4.40
 )
 product43.farm = farm8
 product43.category = meat
@@ -762,7 +762,7 @@ attach_photo(url65, product43, '65')
 product44 = Product.create(
   name: "Chuck Burgers",
   description: "These burgers are totally natural, you won't find any preservatives, rusk, chemicals, or any nasty hidden ingredients.",
-  price: 8.23
+  price: 8.20
 )
 product44.farm = farm8
 product44.category = meat
@@ -773,7 +773,7 @@ attach_photo(url66, product44, '66')
 product45 = Product.create(
   name: "Pasture Fed Rosy Veal Escalopes",
   description: "Escalopes are thin cut, lean and very tender. Sear them quickly in a hot pan. They also take well to a light marinade, a light sauce or coated in breadcrumbs and cooked crispy.",
-  price: 8.97
+  price: 8.90
 )
 product45.farm = farm8
 product45.category = meat
@@ -786,7 +786,7 @@ farm_category15 = FarmCategory.create(category: meat, farm: farm8)
 product46 = Product.create(
   name: "Organic Semi Skimmed Milk",
   description: "Organic semi skimmed milk from British farms we know and trust. Enjoy the natural creamy goodness of organic semi skimmed, which is non GM, high in calcium and lower in fat than whole milk.",
-  price: 0.95
+  price: 0.90
 )
 product46.farm = farm8
 product46.category = dairy
@@ -821,7 +821,7 @@ farm_category16 = FarmCategory.create(category: dairy, farm: farm8)
 product49 = Product.create(
   name: "Hake Fillets",
   description: "Delicious white fish perfect for your fish pie.",
-  price: 9.18
+  price: 9.10
 )
 product49.farm = farm9
 product49.category = fish
@@ -832,7 +832,7 @@ attach_photo(url71, product49, '71')
 product50 = Product.create(
   name: "Lemon Sole Fillets",
   description: "Lemon sole is a misnomer since it's neither a real sole, nor does it taste of lemon. It's actually a flounder (the family that includes plaice and turbot).",
-  price: 11.01
+  price: 11.00
 )
 product50.farm = farm9
 product50.category = fish
@@ -843,7 +843,7 @@ attach_photo(url72, product50, '72')
 product51 = Product.create(
   name: "Gurnard Fillets",
   description: "Gurnard is perfect for roasting whole. Once cooked, the meat can be picked away from the bones on the plate which will save you the hassle of filleting it.",
-  price: 8.76
+  price: 8.70
 )
 product51.farm = farm9
 product51.category = fish
@@ -856,7 +856,7 @@ farm_category17 = FarmCategory.create(category: fish, farm: farm9)
 product52 = Product.create(
   name: "Organic Chicken Thighs",
   description: "Our birds enjoy a relaxed and natural upbringing with acres and acres of luscious pastures free of any pesticides to roam across and forage. A wholesome diet of insects and grubs hiding in the ground and meadow grasses and herbs are supplemented by GM free organic corn to ensure that the birds are kept healthy.",
-  price: 8.17
+  price: 8.10
 )
 product52.farm = farm9
 product52.category = meat
@@ -867,7 +867,7 @@ attach_photo(url74, product52, '74')
 product53 = Product.create(
   name: "81 Day Chicken Thighs",
   description: "Our birds enjoy a relaxed and natural upbringing with acres and acres of luscious pastures free of any pesticides to roam across and forage. A wholesome diet of insects and grubs hiding in the ground and meadow grasses and herbs are supplemented by GM free organic corn to ensure that the birds are kept healthy.",
-  price: 8.62
+  price: 8.60
 )
 product53.farm = farm9
 product53.category = meat
@@ -878,7 +878,7 @@ attach_photo(url75, product53, '75')
 product54 = Product.create(
   name: "Organic Chicken Drumsticks",
   description: "Our birds enjoy a relaxed and natural upbringing with acres and acres of luscious pastures free of any pesticides to roam across and forage. A wholesome diet of insects and grubs hiding in the ground and meadow grasses and herbs are supplemented by GM free organic corn to ensure that the birds are kept healthy.",
-  price: 4.53
+  price: 4.50
 )
 product54.farm = farm9
 product54.category = meat
@@ -891,7 +891,7 @@ farm_category18 = FarmCategory.create(category: meat, farm: farm9)
 product55 = Product.create(
   name: "Pure & Simple ice-cream",
   description: "An unflavoured traditional dairy ice cream.",
-  price: 5
+  price: 5.00
 )
 product55.farm = farm10
 product55.category = dairy
@@ -902,7 +902,7 @@ attach_photo(url77, product55, '77')
 product56 = Product.create(
   name: "Lemon Curd ice-cream",
   description: "With swirls of rich lemon curd it's refreshingly tasty!",
-  price: 5.5
+  price: 5.50
 )
 product56.farm = farm10
 product56.category = dairy
@@ -913,7 +913,7 @@ attach_photo(url78, product56, '78')
 product57 = Product.create(
   name: "Chocolate & Ginger ice-cream",
   description: "A rich, deep, satisfying chocolately treat.",
-  price: 4.6
+  price: 4.60
 )
 product57.farm = farm10
 product57.category = dairy
@@ -926,7 +926,7 @@ farm_category19 = FarmCategory.create(category: dairy, farm: farm10)
 product58 = Product.create(
   name: "Mackerel",
   description: "Either line caught or fish sustainably by day boats in England.",
-  price: 7.23
+  price: 7.20
 )
 product58.farm = farm10
 product58.category = fish
@@ -937,7 +937,7 @@ attach_photo(url80, product58, '80')
 product59 = Product.create(
   name: "Organic Sardines",
   description: "Delicious oily fish, caught in England.",
-  price: 5.72
+  price: 5.70
 )
 product59.farm = farm10
 product59.category = fish
@@ -948,7 +948,7 @@ attach_photo(url81, product59, '81')
 product60 = Product.create(
   name: "Organic Salmon Fillets",
   description: "Known for its orange-red flesh, delicate flavour and firm texture. It is also the richest in Omega 3 of all our salmons.",
-  price: 9.39
+  price: 9.30
 )
 product60.farm = farm10
 product60.category = fish

@@ -1,21 +1,27 @@
-<div class="container7">
-<span><%= link_to "Go back", farms_path %><span>
-</div>
 <div class="text-center">
 
   <div class="title-farm">
+  <div class="go-back">
+<span ><%= link_to "Go back", farms_path %><span>
+</div>
     <h2><%= @farm.name %></h2>
+  </div>
 
-  </div>
+
   <div class="card-farm-show">
-    <%= cl_image_tag @farm.photo.key, height: 800, class: "img-farm" %>
-    <p><%= @farm.description %></p>
+    <div class="img-farm-container">
+    <%= cl_image_tag @farm.photo.key, class: "img-farm" %>
+    </div>
+    <div class="farmer-info">
+      <p><%= @farm.user.first_name %> <%= @farm.user.last_name %></p>
+      <%= cl_image_tag @farm.user.photo.key, class: "img-farmer" %>
+    </div>
+    <div class="centered"><%= @farm.description %></div>
   </div>
-  <div class="card-footer-farm">
-  </div>
+
 </div>
 <div class="container">
-<h2>Our Farm's Produce:</h2>
+<h2 class="moving-right">Our Farm's Produce:</h2>
   <div class="row">
     <% @farm.products.each do |product| %>
       <div class="col-6">
