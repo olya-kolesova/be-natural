@@ -199,7 +199,7 @@ attach_photo(url16, farm4, '16')
 
 farm5 = Farm.create(
   name: "Oasis Farm Waterloo",
-  location: "18 Carlisle Ln, London SE1 7LG",
+  location: "18 Carlisle Lane, London, United Kingdom, SE1 7LG",
   description: "We have transformed a strip of wasteland into a flourishing community resource and a haven for nature, where we learn to care for ourselves, others, plants, animals and the environment."
 )
 farm5.user = User.all[4]
@@ -229,7 +229,7 @@ attach_photo(url19, farm7, '19')
 
 farm8 = Farm.create(
   name: "Deen City Farm",
-  location: "39 Windsor Ave, London SW19 2RR",
+  location: "39 Windsor Avenue, London, United Kingdom, SW19 2RR",
   description: "Deen City Farm is one of London’s oldest City Farms. Established in 1978 on a plot of land where the Phipps Bridge Estate now stands, Deen City Farm has educated the local community for almost 35 years."
 )
 farm8.user = User.all[7]
