@@ -21,7 +21,7 @@
 }
 
 .go-back {
-  width: 80px;
+  width: 90px;
   margin-top: 50px;
   margin-left: -200px;
   margin-right: 150px;
@@ -33,20 +33,20 @@
 .card-farm-show {
   justify-content: center;
   width: 1140px;
-  margin-bottom: -1px;
   margin-right: -300px;
   position: relative;
   text-align: center;
   display: grid;
   grid-template-columns: 840px 300px;
   margin-left: -260px;
+  border: none;
 }
 
 .centered {
   // position: absolute;
   width: 840px;
   margin-top: -50px;
-  margin-bottom: 40px;
+  margin-bottom: -40px;
   // padding: 50px 50px 50px 50px;
   // top: 50%;
   // left: 50%;
@@ -80,7 +80,7 @@
 
 .farmer-info p {
   position: absolute;
-  top: 55%;
+  top: 62%;
   left: 83%;
   // transform: translate(-50%, -50%);
   font-family: GTPressuraMono,sans-serif;
@@ -96,6 +96,20 @@
   object-fit: cover;
 }
 
+.farm-product-card {
+  background: #F6F2D5;
+
+}
+
+.farm-product-card input{
+  background: #F6F2D5;
+
+}
+
+input#order_product_quantity {
+  background: #F6F2D5;
+}
+
 .grid-products {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -108,7 +122,14 @@
     width: 320px;
     height:320px;
     object-fit: cover;
+    margin: 0px 0px 0px 0px;
 }
+
+.product-image-padding{
+  padding-top: 50px;
+  padding-right: 20px;
+}
+
 .container-back{
 font-family: 'Noticia Text', serif;
 font-weight: bold;
