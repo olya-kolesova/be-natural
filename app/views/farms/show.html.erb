@@ -22,7 +22,7 @@
         <div class="card-product">
           <div class="d-flex align-items-center">
             <h3>
-              <%= link_to product.name, product_path(product) %>
+              <%= link_to product.name, product_path(product), class: "product-link" %>
               <% if product.farm.user == current_user %>
                 <%= link_to product_path(product), method: :delete, data: {confirm: "Are you sure you would like to delete this product?"} do %>
                   <div clas="container">
@@ -37,12 +37,24 @@
             </div>
           </div>
 
-          <div id="form" class="form w-100 d-flex justify-content-center">
-            <%= simple_form_for [product, @order_product], html: { class: 'd-flex align-items-center justify-content-center w-100 mb-2' } do |f| %>
-              <%= f.input :quantity, label: false, placeholder: 'Quantity', wrapper_html: { class: 'mr-2 mb-0' } %>
-              <span><%= f.submit "Add to basket" %><span>
-            <% end %>
-
+          <div class="container03 justify-content-center">
+            <% unless current_user.orders.first.products.include?(product) %>
+              <%= simple_form_for [product, @order_product] do |f| %>
+                <%= f.input :quantity, as: :hidden, input_html: {value: 1} %>
+                <span><%= f.submit "Add to basket"%><span>
+              <% end %>
+              <% else %>
+                <% order_product = OrderProduct.where(order: current_user.orders.first, product: product).first %>
+                <div>
+                <% if order_product.quantity > 1 %>
+                  <%= link_to '-', decrease_quantity_order_product_path(order_product, quantity: order_product.quantity), method: :post %>
+                <% end %>
+                <div class="container01">
+                  <%= order_product.quantity%>
+                </div>
+                <%= link_to '+', increase_quantity_order_product_path(order_product, quantity: order_product.quantity), method: :post %>
+                </div>
+              <% end %>
           </div>
         </div>
       </div>

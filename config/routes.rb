@@ -8,5 +8,10 @@ Rails.application.routes.draw do
     resources :order_products, only: [:create]
   end
   resources :orders, only: [:show]
-  resources :order_products, only: [:index, :update, :destroy]
+  resources :order_products, only: [:index, :update, :destroy] do
+    member do
+      post :decrease_quantity
+      post :increase_quantity
+    end
+  end
 end
