@@ -29,9 +29,9 @@
             <h3>
               <%= link_to product.name, product_path(product) %>
               <% if product.farm.user == current_user %>
-                <%= link_to '', product_path(product), id:"delete-link", method: :delete %>
+                <%= link_to '', product_path(product), id:"delete-link-product", method: :delete %>
                 <div class="container">
-                  <i id="sweet-alert-delete" class="fas fa-trash"></i>
+                  <i id="sweet-alert-delete-product" class="fas fa-trash"></i>
                 </div>
               <% end %>
             </h3>
@@ -40,7 +40,6 @@
               <h6>£<%= product.price %></h6>
             </div>
           </div>
-
           <div id="form" class="farm-product-card form w-100 d-flex justify-content-center">
             <%= simple_form_for [product, @order_product], html: { class: 'd-flex align-items-center justify-content-center w-100 mb-2' } do |f| %>
               <%= f.input :quantity, label: false, placeholder: 'Quantity', wrapper_html: { class: 'mr-2 mb-0' } %>
@@ -75,12 +74,12 @@
         <div class="container03 justify-content-center">
           <span><%= f.submit "Create product" %><span>
         </div>
-        <div class="container03 justify-content-center">
-          <span><%= f.submit "Delete Farm" %><span>
-        </div>
+        <%# <div class="container03 justify-content-center"> %>
+          <%# <span><%= f.submit "Delete Farm" <span> %>
+        <%# </div> %>
       </div>
     <% end %>
   </div>
   <% end %>
-<%= javascript_pack_tag 'my_js' %>
 </div>
+<%= javascript_pack_tag 'my_js' %>

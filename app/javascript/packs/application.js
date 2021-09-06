@@ -44,7 +44,7 @@ initSweetalert('#sweet-alert-delete-product', {
   buttons: true
 }, (value) => {
   if (value) {
-    const link = document.querySelector('#delete-link-prod');
+    const link = document.querySelector('#delete-link-product');
     link.click();
   }
 });
