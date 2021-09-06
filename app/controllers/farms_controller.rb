@@ -11,7 +11,6 @@ class FarmsController < ApplicationController
         info_window: render_to_string(partial: "info_window", locals: { farm: farm })
       }
     end
-
   end
 
   def show
