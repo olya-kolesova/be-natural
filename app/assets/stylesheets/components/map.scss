@@ -1,3 +1,48 @@
-// #map{
-//   background-color:pink;
-// }
+.subheader-map{
+  font-family: 'Playfair Display', serif;
+  text-transform: uppercase;
+  padding: 12px 0 12px 0;
+  text-align: center;
+  margin-bottom:29px;
+  font-size: 27px;
+}
+
+h2{
+  margin-top:20px;
+}
+
+
+.marker {
+  background-image: url('cow.png');
+  background-size: cover;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.mapboxgl-marker.mapboxgl-marker-anchor-center {
+  background-image: url('cow.png');
+}
+
+.mapboxgl-popup {
+  max-width: 100px;
+}
+
+.mapboxgl-popup-content {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  font-size:20px;
+}
+
+.mapboxgl-popup-content {
+    position: relative;
+    background-color:#F6F2D5;
+    border-radius: 3px;
+    padding: 10px 10px 15px;
+    pointer-events: auto;
+}
+
+.container-map {
+  position: relative;
+  text-align: center;
+}

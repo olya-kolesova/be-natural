@@ -1,42 +1,48 @@
-<div class="container7">
-<span><%= link_to "Go back", farms_path %><span>
-</div>
 <div class="text-center">
 
   <div class="title-farm">
-    <h2><%= @farm.name %></h2>
-
-  </div>
-  <div class="card-farm-show">
-    <%= cl_image_tag @farm.photo.key, height: 800, class: "img-farm" %>
-    <p><%= @farm.description %></p>
-  </div>
-  <div class="card-footer-farm">
-  </div>
+  <div class="go-back">
+<span ><%= link_to "<Go back", farms_path %><span>
 </div>
-<div class="container">
+    <h2><%= @farm.name %></h2>
+  </div>
+
+
+  <div class="card-farm-show">
+    <div class="img-farm-container">
+    <%= cl_image_tag @farm.photo.key, class: "img-farm" %>
+    </div>
+    <div class="farmer-info">
+      <p><%= @farm.user.first_name %> <%= @farm.user.last_name %></p>
+      <%= cl_image_tag @farm.user.photo.key, class: "img-farmer" %>
+    </div>
+    <div class="centered"><%= @farm.description %></div>
+  </div>
+
+</div>
+<div class="container-farms">
 <h2>Our Farm's Produce:</h2>
+<div class="container">
+<h2 class="moving-right">Our Farm's Produce:</h2>
   <div class="row">
     <% @farm.products.each do |product| %>
       <div class="col-6">
-        <div class="card-product">
+        <div class="farm-product-card card-product">
           <div class="d-flex align-items-center">
             <h3>
               <%= link_to product.name, product_path(product), class: "product-link" %>
               <% if product.farm.user == current_user %>
-                <%= link_to product_path(product), method: :delete, data: {confirm: "Are you sure you would like to delete this product?"} do %>
-                  <div clas="container">
-                  <i class="fas fa-trash"></i>
+                <%= link_to '', product_path(product), id:"delete-link", method: :delete %>
+                  <div class="container">
+                  <i id="sweet-alert-delete" class="fas fa-trash"></i>
                   </div>
                 <% end %>
-              <% end %>
             </h3>
-            <div>
+            <div class="product-image-padding">
               <%= cl_image_tag product.photo.key, height: 800, crop: :fill %>
               <h6>£<%= product.price %></h6>
             </div>
           </div>
-
           <div class="container03 justify-content-center">
             <% unless current_user.orders.first.products.include?(product) %>
               <%= simple_form_for [product, @order_product] do |f| %>
@@ -80,9 +86,9 @@
       <div class="container03 justify-content-center">
       <%= f.input :photo, as: :file %>
       </div>
-       <span><div class="form-actions"><span>
+       <div class="form-actions">
         <div class="container03 justify-content-center">
-      <%= f.submit "Create product" %>
+      <span><%= f.submit "Create product" %><span>
       <div>
       </div>
       <% end %>

@@ -36,4 +36,17 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
 })
 
-import "controllers"
+import { initSweetalert } from '../plugins/init_sweetalert';
+
+initSweetalert('#sweet-alert-delete', {
+  title: "Are you sure you wish to delete your Farm?",
+  text: "This action cannot be undone",
+  icon: "warning",
+  buttons: true
+}, (value) => {
+  if (value) {
+    const link = document.querySelector('#delete-link');
+    link.click();
+  }
+});
+

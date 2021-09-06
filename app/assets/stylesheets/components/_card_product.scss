@@ -5,9 +5,9 @@
   // background: transparent;
   box-shadow: 5px 5px 3px rgb(200, 200, 200);
 }
-img {
-    margin-left: 58px;
-}
+// img {
+//     margin-left: 58px;
+// }
 .card-product img {
   height: 100%;
   width: 120px;
@@ -34,4 +34,16 @@ img {
   padding: 16px;
   justify-content: left;
   border-left: 1px solid;
+}
+
+header-product {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 32px;
+    text-transform: uppercase;
+    line-height: 72px;
+    margin-bottom: 20px;
+    text-align: center;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
 }
