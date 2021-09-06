@@ -1,16 +1,17 @@
 class FarmsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:show, :index]
-    before_action :set_farm, only: [:show, :edit, :update, :destroy]
+  before_action :set_farm, only: [:show, :edit, :update, :destroy]
 
   def index
     @farms = Farm.all
     @markers = @farms.geocoded.map do |farm|
       {
         lat: farm.latitude,
-        lng: farm.longitude
-        # image_url:
+        lng: farm.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { farm: farm })
       }
     end
+
   end
 
   def show
