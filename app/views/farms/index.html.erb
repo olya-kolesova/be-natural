@@ -3,12 +3,14 @@
     <h2>OUR FARMS</h2>
     <div class="farms-container">
       <% @farms.each do |farm| %>
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path farm.photo.key, height: 800, crop: :fill %>')">
-          <h2><%= link_to farm.name, farm_path(farm) %></h2>
-          <div class="farm-category">
-            <p> <%= farm.products[0].category.name %>, <%= farm.products[-1].category.name %> </p>
+        <%= link_to farm_path(farm) do %>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path farm.photo.key, height: 800, crop: :fill %>')">
+            <h2> <%= farm.name %> </h2>
+            <div class="farm-category">
+              <p> <%= farm.products[0].category.name %>, <%= farm.products[-1].category.name %> </p>
+            </div>
           </div>
-        </div>
+        <% end %>
       <% end %>
     </div>
   </div>
