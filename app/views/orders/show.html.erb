@@ -1,6 +1,6 @@
- <div class="wrapper">
- <div class="container-another">
-  <div class="container-form">
+<div class="wrapper">
+  <div class="container-another">
+    <div class="container-form">
       <h2>Basket</h2>
       <div class="container-title">
         <span class='placeholder'></span>
@@ -8,35 +8,35 @@
         <h4>Price</h4>
       </div>
       <% @order_products.each do |order_product| %>
-    <div class="container0">
-
-      <div class="container-item-name">
-       <div class="form-group"> <%= order_product.product.name %></div>
-      </div>
-      <div class="container01">
-        <%= order_product.quantity %>
-      </div>
+        <div class="container0">
+          <div class="container-item-name">
+            <div class="form-group"> 
+              <%= order_product.product.name %>
+            </div>
+          </div>
+        <div class="container01">
+          <%= order_product.quantity %>
+        </div>
         <%= order_product.product.price * order_product.quantity %>
         <%= link_to order_product_path(order_product), method: :delete, data: {confirm: "Are you sure you would like to delete this item from the basket?"} do %>
           <i class="fas fa-trash"></i>
         <% end %>
-    </div>
-    <% end %>
-     <div class="container-title">
+      </div>
+      <% end %>
+      <div class="container-title">
         <span class='placeholder'></span>
         <h4 id="header">Total price</h4>
       </div>
-    <div class="container7">
-      <% if @order_products.any? %>
-        <span><%= link_to "Go back", farm_path(@order_products.last.product.farm) %><span>
-      <% else %>
-        <span><%= link_to "Go back", root_path %><span>
-      <% end %>
-    </div>
-    <div class="container7">
-      <span><%= link_to "Proceed to checkout"%><span>
-    </div>
-    </div>
+      <div class="container7">
+        <% if @order_products.any? %>
+          <span><%= link_to "Go back", farm_path(@order_products.last.product.farm) %><span>
+        <% else %>
+          <span><%= link_to "Go back", root_path %><span>
+        <% end %>
+      </div>
+      <div class="container7">
+        <span><%= link_to "Proceed to checkout"%><span>
+      </div>
     </div>
   </div>
 </div>

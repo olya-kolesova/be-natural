@@ -27,13 +27,13 @@
         <div class="farm-product-card card-product">
           <div class="d-flex align-items-center">
             <h3>
-              <%= link_to product.name, product_path(product) %>
-              <% if product.farm.user == current_user %>
-                <%= link_to '', product_path(product), id:"delete-link-product", method: :delete %>
-                <div class="container">
-                  <i id="sweet-alert-delete-product" class="fas fa-trash"></i>
-                </div>
-              <% end %>
+            <%= link_to product.name, product_path(product) %>
+            <% if product.farm.user == current_user %>
+              <%= link_to '', product_path(product), id:"delete-link-product", method: :delete %>
+              <div class="container">
+                <i id="sweet-alert-delete-product" class="fas fa-trash"></i>
+              </div>
+            <% end %>
             </h3>
             <div class="product-image-padding">
               <%= cl_image_tag product.photo.key, height: 800, crop: :fill %>
