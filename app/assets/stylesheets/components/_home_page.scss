@@ -90,8 +90,8 @@ img.d-block.w-100.carousel-img {
 .container {
   position: relative;
   text-align: center;
-  border-left:1px solid;
-  border-right:1px solid;
+  // border-left:1px solid;
+  // border-right:1px solid;
 }
 
 .container-top {
@@ -103,7 +103,7 @@ img.d-block.w-100.carousel-img {
 .top-left {
 position: absolute;
 top: 43px;
-left: 100px;
+left: 43px;
 font-size: 50px;
 color:#F6F2D5;
 }
