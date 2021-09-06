@@ -8,7 +8,8 @@ class FarmsController < ApplicationController
       {
         lat: farm.latitude,
         lng: farm.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { farm: farm })
+        info_window: render_to_string(partial: "info_window", locals: { farm: farm }),
+        image_url: helpers.asset_url('cow.png')
       }
     end
   end
