@@ -239,7 +239,7 @@ attach_photo(url20, farm8, '20')
 
 farm9 = Farm.create(
   name: "West Hampstead",
-  location: "West Hampstead Thameslink Railway Station (WHP), W End Ln, London, England NW6 2LJ, United Kingdom",
+  location: "NW6 2LJ, London, Greater London, England, United Kingdom",
   description: "West Hampstead Farmers' Market brings you fresh Essex coast fish, free range and organic meat and poultry and dairy and coffee from Brinkworth Dairy. In season we have fresh game, Pippins Orchard Essex apples, asparagus and cherries. Look out for regulars Perry Court Farm and Eden Farm veg, Wild Country organics seasonal veg and leaves, Brambletye biodynamic juice, fruit, veg, eggs and more and Millets Farm juice. There's hot food for breakfast and lunch, seasonal herbs and flowers and very friendly, knowledgeable stall holders."
 )
 farm9.user = User.all[8]
