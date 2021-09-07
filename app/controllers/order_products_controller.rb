@@ -8,7 +8,16 @@ class OrderProductsController < ApplicationController
     @product = Product.find(params[:product_id])
     # if clicked => quanity += 1
     @order_product = OrderProduct.create!(order: @order, product: @product, quantity: order_product_params[:quantity])
-    redirect_to request.referrer
+    respond_to do |format|
+      if @order_product
+        format.html { redirect_to request.referrer }
+        format.json # Follow the classic Rails flow and look for a create.json view
+      else
+        format.html { render 'farms/show' }
+        format.json # Follow the classic Rails flow and look for a create.json view
+      end
+    end
+      # redirect_to request.referrer
   end
 
   def increase_quantity
@@ -35,7 +44,7 @@ class OrderProductsController < ApplicationController
 
   private
 
-    def order_product_params
-      params.require(:order_product).permit(:quantity)
-    end
+  def order_product_params
+    params.require(:order_product).permit(:quantity)
+  end
 end
