@@ -1,13 +1,12 @@
- <div class="wrapper">
- <div class="container-another">
-  <div class="container-form">
+<div class="wrapper">
+  <div class="container-another">
+    <div class="container-form">
       <h2>Basket</h2>
       <div class="container-title">
         <span class='placeholder'></span>
         <h4 id="header">Quantity</h4>
         <h4>Price</h4>
       </div>
-
       <div id="items-list">
         <% @order_products.each do |order_product| %>
           <div class="container0">
@@ -28,22 +27,20 @@
           </div>
         <% end %>
       </div>
-
      <div class="container-title">
         <span class='placeholder'></span>
         <h4 id="header">Total price</h4>
       </div>
-    <div class="container7">
-      <% if @order_products.any? %>
-        <span><%= link_to "Go back", farm_path(@order_products.last.product.farm) %><span>
-      <% else %>
-        <span><%= link_to "Go back", root_path %><span>
-      <% end %>
-    </div>
-    <div class="container7">
-      <span><%= link_to "Proceed to checkout"%><span>
-    </div>
-    </div>
+      <div class="container7">
+        <% if @order_products.any? %>
+          <span><%= link_to "Go back", farm_path(@order_products.last.product.farm) %><span>
+        <% else %>
+          <span><%= link_to "Go back", root_path %><span>
+        <% end %>
+      </div>
+      <div class="container7">
+        <span><%= link_to "Proceed to checkout"%><span>
+      </div>
     </div>
   </div>
 </div>
