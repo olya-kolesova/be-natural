@@ -1,8 +1,6 @@
 .subheader-map{
   font-family: 'Playfair Display', serif;
   text-transform: uppercase;
-  border-bottom: 2px solid #2f2f2f;
-  border-top: 2px solid #2f2f2f;
   padding: 12px 0 12px 0;
   text-align: center;
   margin-bottom:29px;
@@ -42,4 +40,9 @@ h2{
     border-radius: 3px;
     padding: 10px 10px 15px;
     pointer-events: auto;
+}
+
+.container-map {
+  position: relative;
+  text-align: center;
 }
