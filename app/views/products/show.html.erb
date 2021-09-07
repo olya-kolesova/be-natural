@@ -1,48 +1,41 @@
 <div class='container mt-8'>
   <div class='newspaper-bordered'>
-    <header></header>
+    <%# <header></header> %>
     <div class="products-container">
-
       <div class="container-form justify-content-center">
         <header-product>Product Info</header-product>
         <%= cl_image_tag @product.photo.key, height: 1000, width: 800, crop: :fill %>
-          <h2><%= @product.name %>: £<%= sprintf('%.2f', @product.price.round(2)) %></h2>
-          <p><%= @product.description %>.</p>
-          <div class="container03 justify-content-center">
-            <%= simple_form_for [@product, @order_product] do |f| %>
-              <%= f.input :quantity %>
-
-              <span><%= f.submit "Add to basket"%><span>
-            <% end %>
-
-          </div>
-          <% if @product.farm.user == current_user %>
-
-
-              <%= simple_form_for [@product] do |f| %>
-              <div class="container03 justify-content-center">
-                <%= f.input :name %>
-              </div>
-              <div class="container03 justify-content-center">
-                <%= f.input :price %>
-              </div>
-              <%# <%= f.input :category, collection: @categories, placeholder: @product.category.name %>
-              <div class="container03 justify-content-center">
-                <%= f.input :description %>
-              </div>
-              <div class="container03 justify-content-center">
-              <%= f.input :photo, as: :file %>
-              </div>
-             <span> <%= f.submit "Update product"%><span>
-              <% end %>
-            </div>
-            </div>
-
-
-
+        <h2><%= @product.name %>: £<%= sprintf('%.2f', @product.price.round(2)) %></h2>
+        <p><%= @product.description %>.</p>
+        <div class="container03 justify-content-center">
+          <%= simple_form_for [@product, @order_product] do |f| %>
+            <%= f.input :quantity %>
+            <span><%= f.submit "Add to basket"%><span>
           <% end %>
+        </div>
+        <% if @product.farm.user == current_user %>
+          <%= simple_form_for [@product] do |f| %>
+            <div class="container03 justify-content-center">
+              <%= f.input :name %>
+            </div>
+            <div class="container03 justify-content-center">
+              <%= f.input :price %>
+            </div>
+            <%# <%= f.input :category, collection: @categories, placeholder: @product.category.name %>
+            <div class="container03 justify-content-center">
+              <%= f.input :description %>
+            </div>
+            <div class="container03 justify-content-center">
+              <%= f.input :photo, as: :file %>
+            </div>
+            <span> <%= f.submit "Update product"%><span>
+          <% end %>
+          </div>
+        </div>
+        <% end %>
       </div>
     </div>
   </div>
 </div>
+
 <%= javascript_pack_tag 'my_js' %>
