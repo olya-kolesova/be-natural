@@ -1,0 +1,107 @@
+<div class="container">
+
+  <div class="input-group rounded">
+  <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+    aria-describedby="search-addon" />
+  <div class="input-group-text border-0" id="search-addon">
+    <i class="fas fa-search"></i>
+  </div>
+  </div>
+
+  <h2 class="moving-right">Local Produce Near You:</h2>
+  <div class="row">
+
+  <%# <% @farm.products.each do |product| %>
+      <%# <div class="col-6">
+        <div class="farm-product-card card-product">
+          <div class="d-flex align-items-center">
+            <h3> %>
+            <%# <%= link_to product.name, product_path(product) %>
+            <%# <% if product.farm.user == current_user %>
+              <%# <%= link_to '', product_path(product), id:"delete-link-product", method: :delete %>
+              <%# <div class="container">
+                <i id="sweet-alert-delete-product" class="fas fa-trash"></i>
+              </div> %>
+            <%# <% end %>
+
+
+
+    <%# <% @farm.products.each do |product| %>
+
+
+      <%# <div class="col-6">
+        <div class="farm-product-card card-product">
+          <div class="d-flex align-items-center">
+            <h3> %>
+            <%# <%= link_to product.name, product_path(product) %>
+            <%# <% if product.farm.user == current_user %>
+              <%# <%= link_to '', product_path(product), id:"delete-link-product", method: :delete %>
+              <%# <div class="container">
+                <i id="sweet-alert-delete-product" class="fas fa-trash"></i>
+              </div> %>
+            <%# <% end %>
+            <%# </h3>
+            <div class="product-image-padding"> %>
+              <%# <%= cl_image_tag product.photo.key, height: 800, crop: :fill %>
+              <%# <h6>£<%= product.price %></h6>
+            <%# </div>
+          </div>
+          <div class="container03 justify-content-center" data-controller="show-quantity"> %>
+            <%# <% unless current_user&.orders&.first&.products&.include?(product) %>
+              <%# <div data-show-quantity-target="form"> %>
+                <%# <%= simple_form_for [product, @order_product] do |f| %>
+                  <%# <%= f.input :quantity, as: :hidden, input_html: {value: 1} %>
+                  <%# <%= f.submit "Add to basket"%>
+                <%# <% end %>
+              <%# </div> %>
+            <%# <% else %>
+              <%# <div data-show-quantity-target="links" data-action="submit->show-quantity#show"> %>
+                <%# <% order_product = OrderProduct.where(order: current_user.orders.first, product: product).first %>
+                <%# <% if order_product.quantity > 1 %>
+                  <%# <%= link_to '-', decrease_quantity_order_product_path(order_product, quantity: order_product.quantity), method: :post %>
+                <%# <% end %>
+                <%# <div class="container01"> %>
+                  <%# <%= order_product.quantity%>
+                <%# </div> %>
+                <%# <%= link_to '+', increase_quantity_order_product_path(order_product, quantity: order_product.quantity), method: :post %>
+              <%# </div> %>
+            <%# <% end %>
+          <%# </div>
+        </div>
+      </div> %>
+    <%# <% end %>
+  <%# </div> %>
+  <%# <% if @farm.user == current_user %>
+  <div class="container w-50">
+    <br>
+    <h3>Add a new product to your farm</h3>
+    <%# <%= simple_form_for [@farm, @product] do |f| %>
+      <div class="container03 justify-content-center">
+        <%# <%= f.input :name %>
+      </div>
+      <div class="container03 justify-content-center">
+        <%# <%= f.input :price %>
+      </div>
+      <div class="container03 justify-content-center">
+        <%# <%= f.input :category, collection: @categories %>
+      </div>
+      <div class="container03 justify-content-center">
+        <%# <%= f.input :description %>
+      </div>
+      <div class="container03 justify-content-center">
+        <%# <%= f.input :photo, as: :file %>
+      </div>
+      <div class="form-actions">
+        <div class="container03 justify-content-center">
+          <%# <span><%= f.submit "Create product" %><span>
+        </div>
+        <%# <div class="container03 justify-content-center"> %>
+          <%# <span><%= f.submit "Delete Farm" <span> %>
+        <%# </div> %>
+      </div>
+    <%# <% end %>
+  </div>
+  <%# <% end %>
+</div>
+
+<%= javascript_pack_tag 'my_js' %>
