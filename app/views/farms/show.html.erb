@@ -41,7 +41,7 @@
             </div>
           </div>
           <div class="container03 justify-content-center" data-controller="show-quantity">
-            <% unless current_user.orders.first.products.include?(product) %>
+            <% unless current_user&.orders&.first&.products&.include?(product) %>
               <div data-show-quantity-target="form">
                 <%= simple_form_for [product, @order_product] do |f| %>
                   <%= f.input :quantity, as: :hidden, input_html: {value: 1} %>
