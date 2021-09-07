@@ -11,13 +11,6 @@ class OrderProductsController < ApplicationController
     redirect_to request.referrer
   end
 
-  def destroy
-    @order = Order.find_by(user: current_user)
-    @order_product = OrderProduct.find(params[:id])
-    @order_product.destroy
-    redirect_to order_path(@order)
-  end
-
   def increase_quantity
     @order = Order.find_by(user: current_user)
     @order_product = OrderProduct.find(params[:id])
@@ -31,6 +24,14 @@ class OrderProductsController < ApplicationController
     @order_product.update(quantity: @order_product.quantity - 1)
     redirect_to request.referrer
   end
+
+  def destroy
+    @order = Order.find_by(user: current_user)
+    @order_product = OrderProduct.find(params[:id])
+    @order_product.destroy
+    redirect_to order_path(@order)
+  end
+
 
   private
 
