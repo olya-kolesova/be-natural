@@ -1,10 +1,9 @@
 class OrdersController < ApplicationController
-
   def show
     @order = Order.find(params[:id])
     @order_products = OrderProduct.where(order: @order).order(:created_at)
   end
-
+  
   def checkout
     @order = Order.find(params[:id])
     line_items = @order.order_products.includes(:product).map do |order_product|

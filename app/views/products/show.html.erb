@@ -1,7 +1,9 @@
 <div class='container mt-8'>
   <div class='newspaper-bordered'>
     <%# <header></header> %>
+   <p><%= link_to "< View " + @product.farm.name, farm_path(@product.farm), class: "back-to-farm nav-link drop-down drop-border" %></p>
     <div class="products-container">
+
       <div class="container-form justify-content-center">
         <header-product>Product Info</header-product>
         <%= cl_image_tag @product.photo.key, height: 1000, width: 800, crop: :fill %>

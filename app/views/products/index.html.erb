@@ -1,0 +1,51 @@
+<div class="container">
+
+   <%= form_tag products_path, method: :get, class: 'my-5 d-flex' do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control input-thing",
+      placeholder: "Search for produce"
+    %>
+    <%= submit_tag "Search", class: "btn btn-orange" %>
+  <% end %>
+
+  <h2 class="moving-right">Local Produce Near You:</h2>
+  <div class="row">
+    <% @products.each do |product| %>
+      <div class="col-6">
+        <div class="farm-product-card card-product">
+          <div class="d-flex align-items-center">
+            <h3> <%= link_to product.name, product_path(product) %> </h3>
+            <div class="product-image-padding">
+              <%= cl_image_tag product.photo.key, height: 800, crop: :fill %>
+              <h6>£<%= product.price %>
+            </div>
+          </div>
+          <div class="container03 justify-content-center" data-controller="show-quantity">
+            <% unless current_user&.orders&.first&.products&.include?(product) %>
+              <div data-show-quantity-target="form">
+                <%= simple_form_for [product] do |f|  %>
+                  <%= f.input :quantity, as: :hidden, input_html: {value: 1} %>
+                  <%= f.submit "Add to basket" %>
+                <% end %>
+              </div>
+            <% else %>
+              <div data-show-quantity-target="links" data-action="submit->show-quantity#show">
+                <% order_product = OrderProduct.where(order: current_user.orders.first, product: product).first  %>
+                <% if order_product.quantity > 0 %>
+                  <%= link_to '-', decrease_quantity_order_product_path(order_product, quantity: order_product.quantity), method: :post %>
+                <% end %>
+                <div class="container01">
+                  <%= order_product.quantity %>
+                </div>
+                <%= link_to '+', increase_quantity_order_product_path(order_product, quantity: order_product.quantity), method: :post %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<%= javascript_pack_tag 'my_js' %>
