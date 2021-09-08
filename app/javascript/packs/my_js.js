@@ -1,5 +1,5 @@
 
-const form = document.querySelectorAll("form");
+const form = document.querySelectorAll(".op-form");
 form.forEach(function(element) {
 element.addEventListener("submit", function() {
   // let greeting = "Hello";
