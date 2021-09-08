@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
   def index
+    @order_product = OrderProduct.new
     if params[:query].present?
       @products = Product.global_search(params[:query])
     elsif params[:query].present?
