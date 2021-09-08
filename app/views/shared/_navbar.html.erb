@@ -11,7 +11,7 @@
             <span class="navbar-toggler-icon icon-move"></span>
             <div class="nav-move">
               <%# <%= link_to "Orders", order_path(Order.last.id), class: "nav-link drop-down drop-border" %>
-              <span><%= link_to "Basket", order_path(Order.last.id), class: "nav-link drop-down drop-border"%><span>
+              <span><%= link_to "Basket", order_path(@order.id), class: "nav-link drop-down drop-border"%><span>
               </div>
               <div class="nav-move">
               <span><%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav-link drop-down drop-border" %><span>

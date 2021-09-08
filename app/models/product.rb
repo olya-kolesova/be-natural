@@ -1,4 +1,5 @@
 class Product < ApplicationRecord
+  monetize :price_cents
   belongs_to :farm
   belongs_to :category
   has_many :order_products

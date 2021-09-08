@@ -11,6 +11,6 @@ class User < ApplicationRecord
   after_create :order_create
 
   def order_create
-    Order.create(user: self)
+    Order.create(user: self, state: 'pending')
   end
 end
