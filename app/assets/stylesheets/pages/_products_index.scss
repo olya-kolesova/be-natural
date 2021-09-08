@@ -1,3 +1,23 @@
 .input-thing {
-background: #F6F2D5;
+background: #dfcab9;
+color: black;
+border-color: black;
+filter: brightness(2);
+filter: opacity(0.4);
 }
+
+.input-thing::placeholder {
+color: black;
+font-weight: 900;
+}
+
+.input-thing:not(:placeholder-shown)  {
+ color: black;
+ font-weight: 900;
+
+}
+
+.input-thing:hover, .input-thing:focus {
+    border: 1.5px solid #000000;
+    background-color: white;
+  }
