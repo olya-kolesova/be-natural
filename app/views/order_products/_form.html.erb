@@ -1,0 +1,11 @@
+<div data-show-quantity-target="links">
+  <% order_product = OrderProduct.where(order: current_user.orders.first, product: product).first %>
+  <%= simple_form_for order_product, url: order_product_path(order_product), method: :patch, data: { show_quantity_target: "form", action: "submit->show-quantity#update_quantity"} do |f| %>
+    <% if order_product.quantity > 1 %>
+      <span class="signs" data-action="click->show-quantity#decrease">-</span>
+    <% end %>
+    <%= f.input :quantity, label: false %>
+    <span class="signs" data-action="click->show-quantity#increase">+</span>
+    <%= f.submit "update quantity", class: 'd-none' %>
+  <% end %>
+</div>
