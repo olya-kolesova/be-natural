@@ -7,7 +7,9 @@
       <div class="container-form justify-content-center">
         <header-product>Product Info</header-product>
         <%= cl_image_tag @product.photo.key, height: 1000, width: 800, crop: :fill %>
-        <h2><%= @product.name %>: £<%= sprintf('%.2f', @product.price.round(2)) %></h2>
+        <h2><%= @product.name %></h2>
+        <%# : £<%= sprintf('%.2f', @product.price.round(2))</h2> %>
+        <p>Amount: <%= humanized_money_with_symbol(@product.price) %></p>
         <p><%= @product.description %>.</p>
         <div class="container03 justify-content-center">
           <%= simple_form_for [@product, @order_product] do |f| %>

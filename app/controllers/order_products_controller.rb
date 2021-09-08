@@ -4,7 +4,7 @@ class OrderProductsController < ApplicationController
   end
 
   def create
-    @order = Order.find_by(user: current_user)
+    @order = Order.where(user: current_user, state: ['pending', nil]).order(:created_at).last || Order.create(user: current_user, state: 'pending')
     @product = Product.find(params[:product_id])
     # if clicked => quanity += 1
     @order_product = OrderProduct.create!(order: @order, product: @product, quantity: order_product_params[:quantity])
@@ -17,7 +17,6 @@ class OrderProductsController < ApplicationController
         format.json # Follow the classic Rails flow and look for a create.json view
       end
     end
-      # redirect_to request.referrer
   end
 
   def increase_quantity

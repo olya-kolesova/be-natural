@@ -98,7 +98,7 @@ GEM
     execjs (2.7.0)
     faker (2.19.0)
       i18n (>= 1.6, < 2)
-    ffi (1.15.3)
+    ffi (1.15.4)
     font-awesome-sass (5.15.1)
       sassc (>= 1.11)
     geocoder (1.6.7)
@@ -127,21 +127,22 @@ GEM
     method_source (1.0.0)
     mime-types (3.3.1)
       mime-types-data (~> 3.2015)
-    mime-types-data (3.2021.0704)
+    mime-types-data (3.2021.0901)
     mini_mime (1.1.1)
-    mini_portile2 (2.6.1)
     minitest (5.14.4)
+    monetize (1.9.4)
+      money (~> 6.12)
+    money (6.13.8)
+      i18n (>= 0.6.4, <= 2)
+    money-rails (1.14.0)
+      activesupport (>= 3.0)
+      monetize (~> 1.9.0)
+      money (~> 6.13.2)
+      railties (>= 3.0)
     msgpack (1.4.2)
     netrc (0.11.0)
     nio4r (2.5.8)
-    nokogiri (1.12.4)
-      mini_portile2 (~> 2.6.1)
-      racc (~> 1.4)
     nokogiri (1.12.4-arm64-darwin)
-      racc (~> 1.4)
-    nokogiri (1.12.4-x86_64-darwin)
-      racc (~> 1.4)
-    nokogiri (1.12.4-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
     pg (1.2.3)
@@ -233,6 +234,10 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    stripe (5.38.0)
+    stripe_event (2.3.1)
+      activesupport (>= 3.1)
+      stripe (>= 2.8, < 6)
     thor (1.1.0)
     thread_safe (0.3.6)
     tilt (2.0.10)
@@ -268,9 +273,6 @@ GEM
 
 PLATFORMS
   arm64-darwin-20
-  ruby
-  x86_64-darwin-19
-  x86_64-linux
 
 DEPENDENCIES
   autoprefixer-rails (= 10.2.5)
@@ -286,6 +288,7 @@ DEPENDENCIES
   jbuilder (~> 2.7)
   jquery-rails
   listen (~> 3.2)
+  money-rails
   pg (>= 0.18, < 2.0)
   pg_search (~> 2.3.0)
   pry-byebug
@@ -298,6 +301,8 @@ DEPENDENCIES
   simple_form
   spring
   spring-watcher-listen (~> 2.0.0)
+  stripe
+  stripe_event
   turbolinks (~> 5)
   tzinfo-data
   web-console (>= 3.3.0)
@@ -308,4 +313,4 @@ RUBY VERSION
    ruby 2.7.3p183
 
 BUNDLED WITH
-   2.2.26
+   2.2.23
