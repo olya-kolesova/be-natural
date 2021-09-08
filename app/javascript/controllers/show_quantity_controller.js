@@ -43,7 +43,7 @@ export default class extends Controller {
     event.preventDefault();
     const container = event.currentTarget.parentElement
     fetch(event.currentTarget.action, {
-      method: 'POST',
+      method: 'PATCH',
       headers: { 'Accept': "application/json", 'X-CSRF-Token': csrfToken() },
       body: new FormData(event.currentTarget)
     })

@@ -32,7 +32,7 @@
         <h4 id="header">Total price</h4>
         <% total_price = 0 %>
         <% @order_products.each do |order_product| %>
-        <% sprintf('%.2f', total_price += (order_product.product.price * order_product.quantity).round(2)) %>
+         <% sprintf('%.2f', total_price += (order_product.product.price * order_product.quantity).round(2)) %>
         <% end %>
         <h4>£<%= sprintf('%.2f', total_price) %></h4>
       </div>
