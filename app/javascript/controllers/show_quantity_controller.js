@@ -41,9 +41,20 @@ export default class extends Controller {
     const input = event.target.previousElementSibling.firstElementChild
     input.value = (parseInt(input.value, 10) + 1)
     console.log(form)
-    form.submit()
+    form2Target.submit()
   }
 
-
+  update_quantity(event) {
+    event.preventDefault();
+    fetch(event.currentTarget.action, {
+      method: 'PATCH',
+      headers: { 'Accept': "application/json", 'X-CSRF-Token': csrfToken() },
+      body: new FormData(form2)
+    })
+      .then(response => response.json())
+      .then((data) => {
+        container.innerHTML = data.form2;
+      });
+  }
 
 }
