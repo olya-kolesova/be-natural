@@ -20,6 +20,20 @@ class OrderProductsController < ApplicationController
       # redirect_to request.referrer
   end
 
+  def increase_quantity
+    @order = Order.find_by(user: current_user)
+    @order_product = OrderProduct.find(params[:id])
+    @order_product.update(quantity: @order_product.quantity + 1)
+    redirect_to request.referrer
+  end
+
+  def decrease_quantity
+    @order = Order.find_by(user: current_user)
+    @order_product = OrderProduct.find(params[:id])
+    @order_product.update(quantity: @order_product.quantity - 1)
+    redirect_to request.referrer
+  end
+
   def update
     @order_product = OrderProduct.find(params[:id])
     @order_product.update(order_product_params)
