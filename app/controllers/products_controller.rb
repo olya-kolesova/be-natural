@@ -1,6 +1,12 @@
 class ProductsController < ApplicationController
   def index
-    @products = Product.all
+    if params[:query].present?
+      @products = Product.global_search(params[:query])
+    elsif params[:query][:category].present?
+      @products = Product.global_search(params[:query][:category])
+    else
+      @products = Product.all
+    end
   end
 
   def show
