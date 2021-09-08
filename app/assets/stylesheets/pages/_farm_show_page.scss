@@ -155,3 +155,54 @@ i.fas.fa-trash {
   border-left:1px solid;
   border-right:1px solid;
 }
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+#order_product_quantity {
+  width: 64px;
+  text-align: center;
+  padding: 0;
+  border: 2px solid black;
+  font-weight: 600;
+  font-size: 24px;
+  color: black;
+}
+
+.quantity-order-product {
+  width: 288px;
+  margin: 0 auto;
+  margin-bottom: 24px;
+}
+
+.edit_order_product {
+  display: flex;
+}
+
+.signs {
+  font-size: 24px;
+  font-weight: 600;
+  margin: auto 16px;
+  padding: 0 8px;
+  border: 2px solid black;
+  color: black;
+  border-radius: 4px;
+  width: 36px;
+}
+
+
+element.style {
+    font-family: Plaak-SemicondensedRegular,sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+}
+input[type="submit"] {
+  font-family: Plaak-SemicondensedRegular,sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+};
