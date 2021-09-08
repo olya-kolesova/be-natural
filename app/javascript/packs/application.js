@@ -26,7 +26,8 @@ require("jquery")
 
 // External imports
 import "bootstrap";
-
+import "./weather";
+import "./my_js";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
