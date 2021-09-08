@@ -62,3 +62,5 @@ initSweetalert('#sweet-alert-delete-farm', {
     link.click();
   }
 });
+
+import "controllers"

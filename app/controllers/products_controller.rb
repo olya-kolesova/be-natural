@@ -1,11 +1,18 @@
 class ProductsController < ApplicationController
   def index
-    @products = Product.all
+    @order_product = OrderProduct.new
+    if params[:query].present?
+      @products = Product.global_search(params[:query])
+    elsif params[:query].present?
+      @products = Product.global_search(params[:query])
+    else
+      @products = Product.all
+    end
   end
 
   def show
     @product = Product.find(params[:id])
-    @order_product  = OrderProduct.new
+    @order_product = OrderProduct.new
   end
 
   def create
