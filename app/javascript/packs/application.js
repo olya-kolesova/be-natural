@@ -26,14 +26,17 @@ require("jquery")
 
 // External imports
 import "bootstrap";
-import "./weather";
+
 import "./my_js";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
+// import "./weather";
 
+import { weather } from './weather';
 import { initMapbox } from '../plugins/init_mapbox';
 
 document.addEventListener('turbolinks:load', () => {
+  weather();
   initMapbox();
 })
 
