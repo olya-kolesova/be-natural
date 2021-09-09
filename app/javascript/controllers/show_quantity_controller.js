@@ -11,16 +11,14 @@ export default class extends Controller {
   show(event) {
     event.preventDefault();
     const container = event.currentTarget.parentElement
+    console.log(event.currentTarget);
     fetch(event.currentTarget.action, {
       method: 'POST',
       headers: { 'Accept': "application/json", 'X-CSRF-Token': csrfToken() },
-      body: new FormData(this.formTarget)
+      body: new FormData(event.currentTarget)
     })
       .then(response => response.json())
       .then((data) => {
-        if (data.inserted_item) {
-          this.linksTarget.insertAdjacentHTML("beforeend", data.inserted_item);
-        }
         container.innerHTML = data.form;
       });
   }
