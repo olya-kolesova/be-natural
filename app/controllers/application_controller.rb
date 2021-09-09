@@ -14,4 +14,8 @@ class ApplicationController < ActionController::Base
   def set_order
     @order = Order.where(user: current_user, state: ['pending', nil]).order(:created_at).last || Order.create(user: current_user, state: 'pending')
   end
+
+  def default_url_options
+    { host: ENV["DOMAIN"] || "localhost:3000" }
+  end
 end

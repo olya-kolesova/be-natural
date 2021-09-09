@@ -1,3 +1,5 @@
 meta_product_name: "Be-Natural"
 meta_title: "Be-Natural - Local farms are closer than you think"
-meta_description: "Relevant description"
+meta_description: "Be Natural helps you to find the local farms produce nearby you. All you need to do is type in your postcode and find the products you desire. The rest is on us. We will deliver high quality products to your doorstep."
+meta_image: "cover.png" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards
