@@ -6,6 +6,10 @@ filter: brightness(2);
 filter: opacity(0.4);
 }
 
+.card-product h6 {
+  font-family: Plaak-SemicondensedRegular,sans-serif;
+  font-size: 20px;
+}
 .input-thing::placeholder {
 color: black;
 font-weight: 900;
@@ -21,3 +25,4 @@ font-weight: 900;
     border: 1.5px solid #000000;
     background-color: white;
   }
+
