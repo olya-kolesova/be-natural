@@ -34,48 +34,48 @@ import "./my_js";
 
 import { weather } from './weather';
 import { initMapbox } from '../plugins/init_mapbox';
+import { initSweetalert } from '../plugins/init_sweetalert';
 
 document.addEventListener('turbolinks:load', () => {
   weather();
   initMapbox();
+
+  initSweetalert('#sweet-alert-delete-product', {
+    title: "Are you sure you wish to delete this product from your farm?",
+    text: "This action cannot be undone",
+    icon: "warning",
+    buttons: true
+  }, (value) => {
+    if (value) {
+      const link = document.querySelector('#delete-link-product');
+      link.click();
+    }
+  });
+
+  initSweetalert('#sweet-alert-delete-order-product', {
+    title: "Are you sure you wish to delete this product from your basket?",
+    text: "This action cannot be undone",
+    icon: "warning",
+    buttons: true
+  }, (value) => {
+    if (value) {
+      const link = document.querySelector('#delete-link-order-product');
+      link.click();
+    }
+  });
+
+  initSweetalert('#sweet-alert-delete-farm', {
+    title: "Are you sure you wish to delete this product from your farm?",
+    text: "This action cannot be undone",
+    icon: "warning",
+    buttons: true
+  }, (value) => {
+    if (value) {
+      const link = document.querySelector('#delete-link-farm');
+      link.click();
+    }
+  });
+
 })
-
-import { initSweetalert } from '../plugins/init_sweetalert';
-
-initSweetalert('#sweet-alert-delete-product', {
-  title: "Are you sure you wish to delete this product from your farm?",
-  text: "This action cannot be undone",
-  icon: "warning",
-  buttons: true
-}, (value) => {
-  if (value) {
-    const link = document.querySelector('#delete-link-product');
-    link.click();
-  }
-});
-
-initSweetalert('#sweet-alert-delete-order-product', {
-  title: "Are you sure you wish to delete this product from your basket?",
-  text: "This action cannot be undone",
-  icon: "warning",
-  buttons: true
-}, (value) => {
-  if (value) {
-    const link = document.querySelector('#delete-link-order-product');
-    link.click();
-  }
-});
-
-initSweetalert('#sweet-alert-delete-farm', {
-  title: "Are you sure you wish to delete this product from your farm?",
-  text: "This action cannot be undone",
-  icon: "warning",
-  buttons: true
-}, (value) => {
-  if (value) {
-    const link = document.querySelector('#delete-link-farm');
-    link.click();
-  }
-});
 
 import "controllers"

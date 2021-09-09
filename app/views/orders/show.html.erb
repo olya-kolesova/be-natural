@@ -2,20 +2,24 @@
   <div class="container-another">
     <div class="container-form">
       <h2>Basket</h2>
-      <div class="container-title">
+      <div class="basket-title-fix container-title">
         <span class='placeholder'></span>
-        <h4 id="header">Quantity</h4>
-        <h4>Price</h4>
+        <h4 id="header" class="basket-title">Quantity</h4>
+        <h4 class="basket-title-2">Price</h4>
       </div>
       <div id="items-list">
         <% @order_products.each do |order_product| %>
-          <% if order_product.quantity > 0 %>
+
             <div class="container0">
               <div class="container-item-name">
                 <div class="form-group" id="basket-item"> <%= order_product.product.name %>
                 </div>
               </div>
+              <% if order_product.quantity > 1 %>
                 <%= link_to '-', decrease_quantity_order_product_path(order_product, quantity: order_product.quantity), method: :post %>
+              <% else %>
+              <%= '-' %>
+              <% end %>
                 <div class="container01">
                   <%= order_product.quantity%>
                 </div>
@@ -23,18 +27,18 @@
                 <%= sprintf('%.2f', order_product.product.price * order_product.quantity) %>
                 <%= link_to '', order_product_path(order_product), id:'delete-link-order-product', method: :delete %>
                   <i id='sweet-alert-delete-order-product' class="fas fa-trash"></i>
-            </div>
-          <% end %>
+              </div>
+
         <% end %>
       </div>
-      <div class="container-title">
+      <div class="basket-title-fix-2 container-title">
         <span class='placeholder'></span>
         <h4 id="header">Total price</h4>
         <% total_price = 0 %>
         <% @order_products.each do |order_product| %>
          <% sprintf('%.2f', total_price += (order_product.product.price * order_product.quantity).round(2)) %>
         <% end %>
-        <h4>£<%= sprintf('%.2f', total_price) %></h4>
+        <h4 class="total-price-fix">£<%= sprintf('%.2f', total_price) %></h4>
       </div>
       <div class="container7">
         <% if @order_products.any? %>
