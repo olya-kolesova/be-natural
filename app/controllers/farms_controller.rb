@@ -18,6 +18,7 @@ class FarmsController < ApplicationController
     @product = Product.new
     @order_product = OrderProduct.new
     @categories = Category.all
+    @order = current_user.orders.where(state: ['pending', nil]).order(created_at: :desc).last || Order.create(user: current_user, status: 'pending')
   end
 
   def new
