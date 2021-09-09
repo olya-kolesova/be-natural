@@ -8,9 +8,16 @@ const icon = document.querySelector('#icon');
 fetch(url)
 .then(response => response.json())
 .then((data) => {
-  console.log(data);
-  city.innerHTML = data.name;
-  description.innerHTML = data.weather[0].description;
-  temperature.innerHTML = `${Math.round(data.main.temp)}°C`;
-  icon.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}.png`
+  if (city) {
+    city.innerHTML = data.name;
+  }
+  if (description) {
+    description.innerHTML = data.weather[0].description;
+  }
+  if (temperature) {
+    temperature.innerHTML = `${Math.round(data.main.temp)}°C`;
+  }
+  if (icon) {
+    icon.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}.png`
+  }
 });
