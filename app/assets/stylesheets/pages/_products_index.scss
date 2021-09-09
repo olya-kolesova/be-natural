@@ -27,5 +27,10 @@ font-weight: 900;
   }
 
 .product-search-button-height {
-  height: 38px;
+  height: 10px;
+}
+
+.product-search-button-height[type="submit"] {
+  padding-top: 3px;
+  padding-bottom: 33px;
 }
