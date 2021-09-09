@@ -12,7 +12,8 @@
           <% if order_product.quantity > 0 %>
             <div class="container0">
               <div class="container-item-name">
-                <div class="form-group" id="basket-item"> <%= order_product.product.name %></div>
+                <div class="form-group" id="basket-item"> <%= order_product.product.name %>
+                </div>
               </div>
                 <%= link_to '-', decrease_quantity_order_product_path(order_product, quantity: order_product.quantity), method: :post %>
                 <div class="container01">
