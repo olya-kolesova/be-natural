@@ -1,7 +1,14 @@
  <div class="container-top">
-  <div class="weatherbox">
-    <div class="weatherforcastbox">
-      <span style="font-style: italic;">Weatherforcast for the next 24 hours: Plenty of Sunshine</span><br><span>Wind: 7km/h SSE; Ther: 21°C; Hum: 82%</span>
+  <%# <div class="weatherbox"> %>
+    <div class="container-weatherforcastbox">
+      <div class="row">
+      <div class="card">
+      </div>
+      <h3>Weather in <span id="city"></span></h3>
+      <p id="description"></p>
+      <%# <img src="" alt=""> %>
+      <p id="temperature"></p>
+      </div>
     </div>
     <div class="weatherforcastbox">
       <span style="font-style: italic;">Our local farmers will happyly deliver to you!</span><br><span>Just type in your postcode! Tosee if we deliver to you!</span>
@@ -59,15 +66,24 @@
     <div class="collumns d-flex justify-content-space-around">
         <div class="collumn">
             <div class="head"><div class="headline hl3">Our team</div><p><div class="headline hl4">by Name1, nam2 , name3, nam4</div></p></div>
- <p>We are a team of very young and enthusiastic web developers who hope to conquer the world one day!</p></div>
+<p>We are a team of very young and enthusiastic web developers who hope to conquer the world one day!</p>
+ <div class="creators">
+    <img src="https://pbs.twimg.com/profile_images/591877580321488897/L4RN4foS_400x400.jpg" alt="AKB">
+    <img src="https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1625830754/lq0oolm4nsfaunp8zv6i.jpg" alt="DC">
+    <img src="https://avatars.githubusercontent.com/u/86349211?v=4" alt="KU">
+    <img src="https://avatars.githubusercontent.com/u/82317421?v=4" alt="OK">
+    </div>
+
+ </div>
         <div class="collumn">
             <div class="head"><div class="headline hl5">Our mission:</div><p><div class="headline hl6">Be Natural</div></p></div>
-<p>Be Natural helps you to find the local farms produce nearby you. All you need to do is type in your postcode and find the products you desire. The rest is on us. We will deliver high quality products to your doorstep.</p>
+<p>Be Natural helps connect you with the very best local farm produce. We’ve carefully curated the upmost quality of ingredients and all of our produce is sustainably sourced. With decades of experience from our professional team of farmers. All you need to do is choose a farm near you and find the produce you desire. The rest is on us. We will deliver high quality products to your doorstep. A-moo-sing!</p>
             </div>
         <div class="collumn"><div class="head"><div class="headline hl1">May the Force be with you</div><p><div class="headline hl2">Nowadays we need to think about our planet and our future generations. </div></p></div>In Be Natural we care about the impact the farming has that is why we use only glass bottles and paper packaging.Return your used bottles and get get extra discount from us! May the Force be with you.</p>
 					<p>Buy our products. You will not regret!</p></div>
-    </div>
+
 </div>
 <%# <div class="container">
 <button type="button" class="btn btn-light">button</button>
 </div> %>
+

@@ -1,22 +1,32 @@
-<div class="container">
-  <div class="row py-4">
-    <div class="col">
-      <h1>Checkout summary</h1>
-      <% @order.order_products.each do |order_product| %>
-        <p>
-          <strong><%= order_product.product.name %></strong> for <strong><%= humanized_money_with_symbol order_product.product.price %></strong></p>
-      <% end %>
-      <button id="pay" class="btn btn-primary">Pay</button>
-      <script src="https://js.stripe.com/v3/"></script>
-      <script>
-        const paymentButton = document.getElementById('pay');
-        paymentButton.addEventListener('click', () => {
-          const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
-          stripe.redirectToCheckout({
+ <div class="wrapper">
+  <div class="container-another">
+    <div class="container-form">
+      <h2>Checkout summary</h2>
+        <div id="items-list">
+          <% @order.order_products.each do |order_product| %>
+            <div class="container0">
+              <div class="container-item-name">
+                <p><strong><%= order_product.product.name %></strong> for
+                <strong><%= humanized_money_with_symbol order_product.product.price %></strong></p>
+              </div>
+            </div>
+          <% end %>
+        </div>
+        <div id="items-list">
+          <div class="container0">
+            <div class="container-item-name">
+          <span> <h4 id="pay">Pay</h4><span>
+          <script src="https://js.stripe.com/v3/"></script>
+          <script>
+            const paymentButton = document.getElementById('pay');
+            paymentButton.addEventListener('click', () => {
+            const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
+            stripe.redirectToCheckout({
             sessionId: '<%= @order.checkout_session_id %>'
-          });
-        });
-        </script>
+            });
+            });
+           </script>
+        </div>
     </div>
   </div>
 </div>
