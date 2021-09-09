@@ -13,11 +13,13 @@
   margin: none;
   float: right;
   margin-right: 150px;
+}
+
 .was-validated .form-control:valid, .form-control.is-valid {
   background-image: none;
 }
 
-  input#product_name, input#product_price, select#product_category, textarea#product_description {
+input#product_name, input#product_price, select#product_category, textarea#product_description {
   background-color: transparent;
   border: 1px solid black;
 }
