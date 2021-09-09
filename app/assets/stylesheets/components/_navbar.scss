@@ -2,6 +2,11 @@ ul {
   display: flex;
   align-items: baseline;
 }
+
+.nav-farms-margin {
+  margin-left: 160px;
+}
+
 .my-navbar {
   background-color: transparent!important;
   margin-top: 20px;
@@ -23,6 +28,7 @@ a.navbar {
 
 .drop-down {
   background-color:transparent!important;
+  width: 150px;
 }
 
 a.dropdown-item {
@@ -70,24 +76,24 @@ img {
   display: flex;
   width: 80px;
   height:30px;
+  margin-left: 50px;
   overflow: hidden;
   position: relative;
-  margin: 0;
   font-size: 16px;
   padding: 5px 5px 5px 5px;
   @include transition( all 0.4s 0.1s ease-in-out );
 
   &:hover {
     width: 450px;
+    justify-content: space-evenly;
 
     .nav-link  {
       a {
         &:before {
-          margin-left: -100px;
+
         }
 
         &:after {
-          margin-left: -5px;
         }
       }
     }
@@ -96,7 +102,7 @@ img {
 
 .nav-move {
   display: flex;
-  margin-top: -7px;
+  margin-top: -10px;
 }
 
 .icon-move {
