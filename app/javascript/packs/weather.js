@@ -3,7 +3,7 @@ const url = 'https://api.openweathermap.org/data/2.5/weather?q=london&appid=d038
 const city = document.querySelector('#city');
 const description = document.querySelector('#description');
 const temperature = document.querySelector('#temperature');
-
+const icon = document.querySelector('#icon');
 
 fetch(url)
 .then(response => response.json())
@@ -11,5 +11,6 @@ fetch(url)
   console.log(data);
   city.innerHTML = data.name;
   description.innerHTML = data.weather[0].description;
-  temperature.innerHTML = data.main.temp;
+  temperature.innerHTML = `${Math.round(data.main.temp)}°C`;
+  icon.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}.png`
 });
