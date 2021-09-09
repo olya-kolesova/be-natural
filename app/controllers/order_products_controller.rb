@@ -9,7 +9,7 @@ class OrderProductsController < ApplicationController
     # if clicked => quanity += 1
     @order_product = OrderProduct.create!(order: @order, product: @product, quantity: order_product_params[:quantity])
     respond_to do |format|
-      if @order_product
+      if @order_product.persisted?
         format.html { redirect_to request.referrer }
         format.json # Follow the classic Rails flow and look for a create.json view
       else
