@@ -19,7 +19,7 @@ h4#pay {
     justify-content: center;
     margin-bottom: 35px;
     border: 1px solid black;
-    box-shadow: 20px 20px 0 #997E65;
+    box-shadow: 20px 20px 0 RGB(0 0 0 / 30%);
     border-radius: 0px;
     padding-top: 13px;
     padding-bottom: 8px;
@@ -33,10 +33,11 @@ h4#pay {
     /* justify-content: space-between; */
     margin-bottom: 35px;
     border: 1px solid black;
-    box-shadow: 20px 20px 0 #997E65;
+    box-shadow: 20px 20px 0 RGB(0 0 0 / 30%);
     padding-top: 13px;
     padding-bottom: 2px;
     padding-left: 41px;
     padding-right: 48px;
     align-items: center;
+    justify-content:center;
 }
