@@ -21,7 +21,7 @@
             </div>
         </li>
         <% else %>
-          <li class="nav-item">
+          <li class="dance-fix nav-item">
              <span><%= link_to "Login", new_user_session_path, class: "nav-link" %><span>
           </li>
           <li class="nav-item">
@@ -33,10 +33,12 @@
   </div>
   <% if user_signed_in? %>
    <span> <ul class="checkout"><span>
-        <li class="nav-item">
-          <%# <%= link_to "Basket", order_path(current_user.orders.first), class: "nav-link drop-down drop-border" %>
-        </li>
+
       </ul>
   <% end %>
-<%= Date.today.strftime(" %A, %B %e %Y") %>
+  <li class="date-fix nav-item">
+          <%# <%= link_to "Basket", order_path(current_user.orders.first), class: "nav-link drop-down drop-border" %>
+          <%= Date.today.strftime(" %A, %B %e %Y") %>
+        </li>
+
 </nav>

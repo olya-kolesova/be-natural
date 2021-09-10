@@ -4,7 +4,11 @@ ul {
 }
 
 .nav-farms-margin {
-  margin-left: 220px;
+  margin-left: 95px;
+}
+
+.date-fix {
+  margin-left: -60px;
 }
 
 .my-navbar {
@@ -76,7 +80,7 @@ img {
   display: flex;
   width: 80px;
   height:30px;
-  margin-left: 50px;
+  margin-left: 0px;
   overflow: hidden;
   position: relative;
   font-size: 16px;
