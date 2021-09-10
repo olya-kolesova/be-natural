@@ -63,11 +63,11 @@
   <div class="row py-4">
     <div class="col">
       <h1 id="order">Order #<%= @order.id %> <small><span class="badge badge-primary"><%= @order.state %></span></small></h1>
-      <ul class="list-unstyled">
-        <li><% @order.order_products.each do |order_product| %></li>
-        <li> <h4 id="order-product"><strong><%= order_product.product.name %></strong> for <strong><%= humanized_money_with_symbol order_product.product.price %></strong></h4></li>
+      <%# <ul class="list-unstyled"> %>
+        <li id="list"><% @order.order_products.each do |order_product| %></li>
+        <li id="list"> <h4 id="order-product"><strong><%= order_product.product.name %></strong> for <strong><%= humanized_money_with_symbol order_product.product.price %></strong></h4></li>
         <% end %>
-      </ul>
+      <%# </ul> %>
       <h4 id="order-text">Expected to be delivered shortly!</h4>
     </div>
   </div>
