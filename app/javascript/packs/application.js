@@ -52,17 +52,20 @@ document.addEventListener('turbolinks:load', () => {
     }
   });
 
-  initSweetalert('#sweet-alert-delete-order-product', {
-    title: "Are you sure you wish to delete this product from your basket?",
-    text: "This action cannot be undone",
-    icon: "warning",
-    buttons: true
-  }, (value) => {
-    if (value) {
-      const link = document.querySelector('#delete-link-order-product');
-      link.click();
-    }
-  });
+  document.querySelectorAll('.sweet-alert-delete-order-product').forEach((button) => {
+    initSweetalert(`#${button.id}`, {
+      title: "Are you sure you wish to delete this product from your basket?",
+      text: "This action cannot be undone",
+      icon: "warning",
+      buttons: true
+    }, (value) => {
+      if (value) {
+        const link = button.previousElementSibling;
+        link.click();
+      }
+    });
+  })
+
 
   initSweetalert('#sweet-alert-delete-farm', {
     title: "Are you sure you wish to delete this product from your farm?",

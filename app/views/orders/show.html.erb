@@ -26,7 +26,7 @@
                 <%= link_to '+', increase_quantity_order_product_path(order_product, quantity: order_product.quantity), method: :post %>£
                 <%= sprintf('%.2f', order_product.product.price * order_product.quantity) %>
                 <%= link_to '', order_product_path(order_product), id:'delete-link-order-product', method: :delete %>
-                  <i id='sweet-alert-delete-order-product' class="fas fa-trash"></i>
+                <i id="sweet-alert-delete-order-product-<%= order_product.id %>" class="fas fa-trash sweet-alert-delete-order-product"></i>
               </div>
 
         <% end %>
@@ -57,7 +57,7 @@
 
 <% if @order.state == 'paid' %>
 
-            
+
  <div class="container-another">
 <div class="container-form-checkout-status">
   <div class="row py-4">
