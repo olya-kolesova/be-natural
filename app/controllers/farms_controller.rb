@@ -1,5 +1,5 @@
 class FarmsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:show, :index]
+  skip_before_action :authenticate_user!, only: [:index]
   before_action :set_farm, only: [:show, :edit, :update, :destroy]
 
   def index
