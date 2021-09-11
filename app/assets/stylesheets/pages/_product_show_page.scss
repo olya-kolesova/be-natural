@@ -13,6 +13,7 @@
   margin: none;
   float: right;
   margin-right: 150px;
+  margin-bottom: 64px;
 }
 
 .was-validated .form-control:valid, .form-control.is-valid {
@@ -28,4 +29,9 @@ input[type="submit"] {
   background-color: transparent;
   border: 1px solid black;
   padding: 8px 16px;
+}
+
+.edit_order_product {
+  display: flex;
+  align-items: center;
 }

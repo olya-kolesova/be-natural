@@ -38,7 +38,6 @@
   border-left: 1px solid;
   padding-right: 32px;
   border-right: 1px solid;
-
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 32px;
@@ -68,8 +67,8 @@
 }
 
 .products-container p {
-  width: 528px;
   font-size: 20px;
+  margin-bottom: 24px;
 }
 
 .description-text {
@@ -82,13 +81,13 @@
   width: 600px;
 }
 
-.products-container form{
+.products-container form {
   margin: 0px 0px 20px 0px;
   align-self: end;
+  // display: flex;
+  // align-items: center;
 }
-// .newspaper-bordered {
-//   float: left;
-// }
+
 
 .newspaper-bordered h2 {
   border-top: 1px solid;
